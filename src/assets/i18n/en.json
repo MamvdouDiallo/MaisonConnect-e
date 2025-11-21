@@ -1,13 +1,18 @@
 {
   "brand": "Brand",
   "nav": {
-    "store": "Store",
-    "mac": "Mac",
-    "ipad": "iPad",
-    "iphone": "iPhone",
-    "watch": "Watch",
-    "airpods": "AirPods",
-    "support": "Support"
+    "accueil": "Home",
+    "securite": "Electronic Security",
+    "domotique": "Home Automation",
+    "energie": "Solar Energy",
+    "packs": "Our Packages",
+    "services": "Services",
+    "accessoires": "Accessories",
+    "shop": "Shop",
+    "devis": "Request a Quote",
+    "support": "Support",
+    "contact": "Contact Us",
+    "recherche": "Search"
   },
   "cta": {
     "learnMore": "Learn more",

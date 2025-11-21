@@ -6,14 +6,26 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterLink, NgFor, TranslateModule,CommonModule],
-  templateUrl: './footer.component.html'
+  imports: [RouterLink, NgFor, TranslateModule, CommonModule],
+  templateUrl: './footer.component.html',
 })
 export class FooterComponent {
   cols = [
-    { title: 'Shop et Découvrir', links: ['Store','Mac','iPad','iPhone','Watch','AirPods'] },
-    { title: 'Services', links: ['Compte','iCloud','Entertainment'] },
-    { title: 'Apple Store', links: ['Trouver un Store','Financement','Aide'] },
-    { title: 'Business', links: ['Apple et Business','Entreprises'] },
+    {
+      title: 'Produits',
+      links: ['Sécurité', 'Domotique', 'Énergie', 'Packs', 'Accessoires'],
+    },
+    {
+      title: 'Services',
+      links: ['Services', 'Support', 'Devis'],
+    },
+    {
+      title: 'Boutique',
+      links: ['Shop'],
+    },
+    {
+      title: 'Contact',
+      links: ['Contact', 'Recherche'],
+    },
   ];
 }

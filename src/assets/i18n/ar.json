@@ -1,13 +1,18 @@
 {
   "brand": "العلامة",
   "nav": {
-    "store": "المتجر",
-    "mac": "ماك",
-    "ipad": "آيباد",
-    "iphone": "آيفون",
-    "watch": "واتش",
-    "airpods": "إيربودز",
-    "support": "الدعم"
+    "accueil": "الرئيسية",
+    "securite": "الأمن الإلكتروني",
+    "domotique": "التحكم المنزلي",
+    "energie": "الطاقة الشمسية",
+    "packs": "باقاتنا",
+    "services": "الخدمات",
+    "accessoires": "الإكسسوارات",
+    "shop": "المتجر",
+    "devis": "طلب عرض سعر",
+    "support": "الدعم",
+    "contact": "اتصل بنا",
+    "recherche": "البحث"
   },
   "cta": {
     "learnMore": "اعرف المزيد",

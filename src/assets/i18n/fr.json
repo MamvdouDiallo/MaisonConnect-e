@@ -1,14 +1,19 @@
 {
   "brand": "Marque",
   "nav": {
-    "store": "Store",
-    "mac": "Mac",
-    "ipad": "iPad",
-    "iphone": "iPhone",
-    "watch": "Watch",
-    "airpods": "AirPods",
-    "support": "Support"
-  },
+  "accueil": "Accueil",
+  "securite": "Sécurité électronique",
+  "domotique": "Domotique",
+  "energie": "Énergie solaire",
+  "packs": "Nos packs",
+  "services": "Services",
+  "accessoires": "Accessoires",
+  "shop": "Shop",
+  "devis": "Demande de devis",
+  "support": "Support",
+  "contact": "Nous contacter",
+  "recherche": "Recherche"
+},
   "cta": {
     "learnMore": "En savoir plus",
     "buy": "Acheter"

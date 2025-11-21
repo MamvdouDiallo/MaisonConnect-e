@@ -1,0 +1,187 @@
+<!-- HERO / BANNIÈRE -->
+<section
+  class="relative w-full h-[55vh] flex items-center justify-center text-center overflow-hidden"
+>
+  <div
+    class="absolute inset-0 bg-cover bg-center transition-all duration-500"
+    [style.transform]="'translateY(' + bgOffset + 'px)'"
+    style="
+      background-image: url('https://cdn.shopify.com/s/files/1/0267/7336/0303/files/smart-home-banner.jpg?v=1617373807');
+    "
+  ></div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+  <div class="relative z-10 text-white px-4">
+    <h1 class="text-4xl md:text-5xl font-bold drop-shadow-lg animate-fade-in">
+      Domotique & Maison Intelligente
+    </h1>
+    <p class="mt-4 max-w-2xl mx-auto text-lg opacity-90 animate-fade-in-delayed">
+      Automatisations, capteurs intelligents, éclairages connectés…  
+      Contrôlez votre maison comme jamais auparavant.
+    </p>
+  </div>
+</section>
+
+<!-- FILTRES -->
+<div class="w-full max-w-5xl mx-auto px-4 mt-10 flex justify-center gap-4 flex-wrap">
+  <button
+    (click)="filter = 'all'"
+    [class.bg-gray-900]="filter === 'all'"
+    [class.text-white]="filter === 'all'"
+    class="px-5 py-2 rounded-full border border-gray-300 dark:border-gray-600 transition hover:bg-gray-100 dark:hover:bg-gray-800"
+  >
+    Tous
+  </button>
+
+  <button
+    (click)="filter = 'light'"
+    [class.bg-gray-900]="filter === 'light'"
+    [class.text-white]="filter === 'light'"
+    class="px-5 py-2 rounded-full border border-gray-300 dark:border-gray-600 transition hover:bg-gray-100 dark:hover:bg-gray-800"
+  >
+    Lumières
+  </button>
+
+  <button
+    (click)="filter = 'sensor'"
+    [class.bg-gray-900]="filter === 'sensor'"
+    [class.text-white]="filter === 'sensor'"
+    class="px-5 py-2 rounded-full border border-gray-300 dark:border-gray-600 transition hover:bg-gray-100 dark:hover:bg-gray-800"
+  >
+    Capteurs
+  </button>
+
+  <button
+    (click)="filter = 'automation'"
+    [class.bg-gray-900]="filter === 'automation'"
+    [class.text-white]="filter === 'automation'"
+    class="px-5 py-2 rounded-full border border-gray-300 dark:border-gray-600 transition hover:bg-gray-100 dark:hover:bg-gray-800"
+  >
+    Automatisation
+  </button>
+</div>
+
+<!-- PRODUITS -->
+<section
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto mt-12"
+>
+  <div
+    *ngFor="let p of visibleProducts; let i = index"
+    class="p-4 rounded-2xl bg-white dark:bg-gray-900 shadow-md hover:shadow-xl transition 
+           opacity-0 animate-fade-up"
+    [style.animationDelay]="delayForIndex(i)"
+  >
+    <img
+      [src]="p.image"
+      [alt]="p.title"
+      class="w-full h-56 object-cover rounded-xl mb-4"
+    />
+
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+      {{ p.title }}
+    </h3>
+
+    <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
+      {{ p.description }}
+    </p>
+
+    <!-- Prix en haut -->
+    <div class="mt-4">
+      <span class="font-bold text-xl text-gray-900 dark:text-white">
+        {{ p.price }}
+      </span>
+    </div>
+
+    <!-- Boutons en bas -->
+    <div class="mt-4 flex justify-end gap-2">
+      <button
+        (click)="openDetail(p)"
+        class="inline-flex items-center justify-center
+          px-4 py-2 min-w-[120px]
+          rounded-full border border-gray-300 dark:border-gray-700
+          bg-white dark:bg-gray-900
+          text-gray-900 dark:text-gray-100
+          hover:bg-gray-100 dark:hover:bg-gray-800
+          transition font-medium"
+      >
+        Détails
+      </button>
+
+      <a
+        [href]="p.link"
+        target="_blank"
+        class="inline-flex items-center justify-center
+          px-4 py-2 min-w-[120px]
+          rounded-full bg-gray-900 text-white dark:bg-white dark:text-gray-900
+          hover:bg-gray-800 dark:hover:bg-gray-200 transition font-medium"
+      >
+        Acheter
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL PRODUIT -->
+<div
+  *ngIf="selectedProduct"
+  class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+>
+  <div
+    class="bg-white dark:bg-gray-900 w-full max-w-xl rounded-2xl p-6 shadow-xl animate-zoom-in"
+  >
+    <button
+      (click)="closeDetail()"
+      class="absolute top-4 right-4 text-gray-800 dark:text-gray-200 text-2xl"
+    >
+      ✕
+    </button>
+
+    <img
+      [src]="selectedProduct.image"
+      class="w-full h-64 object-cover rounded-xl"
+    />
+
+    <h2 class="text-2xl font-bold mt-4 text-gray-900 dark:text-white">
+      {{ selectedProduct.title }}
+    </h2>
+
+    <p class="text-gray-600 dark:text-gray-300 mt-2">
+      {{ selectedProduct.description }}
+    </p>
+
+    <!-- Points forts -->
+    <div class="mt-4" *ngIf="selectedProduct.highlights">
+      <h3 class="font-semibold text-gray-900 dark:text-white">Points forts</h3>
+      <ul class="list-disc ml-6 text-gray-700 dark:text-gray-300">
+        <li *ngFor="let h of selectedProduct.highlights">{{ h }}</li>
+      </ul>
+    </div>
+
+    <!-- Spécifications -->
+    <div class="mt-4" *ngIf="selectedProduct.specs">
+      <h3 class="font-semibold text-gray-900 dark:text-white">Spécifications</h3>
+      <div class="grid grid-cols-2 gap-2 mt-2 text-gray-700 dark:text-gray-300">
+        <div *ngFor="let key of (selectedProduct.specs | keyvalue)">
+          <strong>{{ key.key }}:</strong> {{ key.value }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Prix & bouton -->
+    <div class="flex justify-between items-center mt-6">
+      <span class="font-bold text-xl text-gray-900 dark:text-white">
+        {{ selectedProduct.price }}
+      </span>
+
+      <a
+        [href]="selectedProduct.link"
+        target="_blank"
+        class="px-5 py-2 rounded-full bg-gray-900 text-white dark:bg-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-200 transition"
+      >
+        Commander
+      </a>
+    </div>
+  </div>
+</div>

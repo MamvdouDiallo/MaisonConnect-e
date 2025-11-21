@@ -1,0 +1,139 @@
+<!-- Fond dynamique -->
+<div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 dark:from-black/80 dark:to-black/60 -z-10"></div>
+
+<section class="min-h-screen px-6 py-14 lg:py-20 relative">
+
+  <!-- HERO -->
+  <header class="grid lg:grid-cols-2 gap-8 items-center mb-12 lg:mb-16">
+    <div class="space-y-4">
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white">
+        Nos Packs Solaires
+      </h1>
+      <p class="text-gray-600 dark:text-gray-300 text-lg max-w-xl">
+        Découvrez nos solutions clé en main adaptées à tous vos besoins.
+      </p>
+
+      <!-- Filtres et recherche -->
+      <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+
+        <!-- Filtres -->
+        <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filtres de packs">
+          <button class="px-4 py-2 rounded-full border transition font-medium text-gray-700 dark:text-gray-200"
+                  [class.bg-gray-900]="filter==='all'" 
+                  [class.text-white]="filter==='all'"
+                  (click)="filter='all'">Tous</button>
+          <button class="px-4 py-2 rounded-full border transition font-medium text-gray-700 dark:text-gray-200"
+                  [class.bg-gray-900]="filter==='starter'" 
+                  [class.text-white]="filter==='starter'"
+                  (click)="filter='starter'">Starter</button>
+          <button class="px-4 py-2 rounded-full border transition font-medium text-gray-700 dark:text-gray-200"
+                  [class.bg-gray-900]="filter==='pro'" 
+                  [class.text-white]="filter==='pro'"
+                  (click)="filter='pro'">Pro</button>
+          <button class="px-4 py-2 rounded-full border transition font-medium text-gray-700 dark:text-gray-200"
+                  [class.bg-gray-900]="filter==='premium'" 
+                  [class.text-white]="filter==='premium'"
+                  (click)="filter='premium'">Premium</button>
+        </div>
+
+        <!-- Recherche -->
+        <div class="mt-2 sm:mt-0">
+          <input type="search"  placeholder="Rechercher un pack…"
+                 class="w-full sm:w-64 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 
+                        bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500
+                        focus:ring-2 focus:ring-indigo-500 focus:outline-none transition" />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Visuel hero -->
+    <div class="flex justify-center lg:justify-end">
+      <div class="w-80 h-64 lg:w-96 lg:h-72 bg-white/30 dark:bg-black/40 backdrop-blur-xl rounded-3xl shadow-xl flex items-center justify-center overflow-hidden">
+        <img src="https://via.placeholder.com/350x250?text=Packs+Solaires" alt="Packs Solaires"
+             class="w-72 lg:w-80 object-contain transform hover:scale-105 transition" />
+      </div>
+    </div>
+  </header>
+
+  <!-- GRID PACKS -->
+  <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-6xl mx-auto">
+    <article *ngFor="let p of visiblePacks; let i = index"
+             class="bg-white dark:bg-gray-900 rounded-2xl shadow-md dark:shadow-lg overflow-hidden flex flex-col transition transform hover:-translate-y-1 hover:scale-[1.02] opacity-0 animate-fade-up"
+             [style.animationDelay]="delayForIndex(i)">
+
+      <!-- Image pack -->
+      <div class="h-44 bg-gray-50 dark:bg-gray-800 flex items-center justify-center overflow-hidden">
+        <img [src]="p.image" [alt]="p.title" class="object-contain w-full h-full" loading="lazy" />
+      </div>
+
+      <!-- Infos pack -->
+      <div class="p-4 flex flex-col flex-1">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ p.title }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 flex-1 mt-2">{{ p.description }}</p>
+
+        <span class="font-bold text-xl text-gray-900 dark:text-white mt-4">{{ p.price }}</span>
+
+        <div class="mt-4 flex flex-col gap-3">
+          <button (click)="openDetail(p)"
+                  class="inline-flex items-center justify-center px-4 py-2 min-w-[140px] rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition font-medium">
+            Voir détails
+          </button>
+
+          <a [href]="p.link || '#'" target="_blank"
+             class="inline-flex items-center justify-center px-4 py-2 min-w-[140px] rounded-full bg-gray-900 text-white dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition font-medium">
+            Commander
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+</section>
+
+<!-- MODAL DETAIL PACK -->
+<div *ngIf="selectedPack" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm" role="dialog" aria-modal="true" (click)="closeDetail()">
+  <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-5xl w-full mx-4 overflow-auto" (click)="$event.stopPropagation()">
+    <button aria-label="Fermer" (click)="closeDetail()" class="absolute top-4 right-4 text-gray-700 dark:text-gray-200 text-2xl hover:text-gray-900 dark:hover:text-white transition">✕</button>
+
+    <div class="grid lg:grid-cols-2 gap-6 p-6">
+      <div class="flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden">
+        <img [src]="selectedPack?.image" [alt]="selectedPack?.title" class="object-contain w-full h-full" loading="lazy" />
+      </div>
+
+      <div class="flex flex-col">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">{{ selectedPack?.title }}</h2>
+        <p class="text-gray-600 dark:text-gray-300 mt-2">{{ selectedPack?.description }}</p>
+
+        <ul *ngIf="selectedPack?.highlights?.length" class="flex flex-wrap gap-2 mt-4">
+          <li *ngFor="let h of selectedPack!.highlights" class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm text-gray-900 dark:text-white font-semibold">{{ h }}</li>
+        </ul>
+
+        <table *ngIf="selectedPack?.specs" class="mt-4 w-full text-left border-collapse">
+          <tbody>
+            <tr *ngFor="let k of (selectedPack?.specs | keyvalue)">
+              <td class="font-semibold text-gray-900 dark:text-white pr-4 py-1">{{ k.key }}</td>
+              <td class="text-gray-600 dark:text-gray-300 py-1">{{ k.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="mt-6 flex items-center justify-between">
+          <span class="text-2xl font-extrabold text-gray-900 dark:text-white">{{ selectedPack?.price }}</span>
+          <a [href]="selectedPack?.link || '#'" target="_blank" class="px-5 py-2 rounded-full bg-gray-900 text-white hover:bg-gray-800 transition font-semibold">Commander maintenant</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANIMATIONS CSS -->
+<style>
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.5s ease forwards;
+  }
+</style>
