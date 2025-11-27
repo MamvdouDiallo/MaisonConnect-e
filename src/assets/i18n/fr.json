@@ -334,7 +334,7 @@
   "info": {
     "title": "Nos coordonnées",
     "address": "123 Rue Exemple, Dakar, Sénégal",
-    "phone": "+221 77 123 45 67",
+    "phone": "+221 78 672 22 22",
     "email": "contact@monentreprise.com",
     "hours": "Lun - Ven : 9h - 18h"
   },
@@ -372,5 +372,170 @@
 },
   "details": {
     "title": "Retour aux articles"
+  },
+
+  "SmartHomeHub": {
+    "title": "Smart Home Hub",
+    "subtitle1": "Contrôlez tout. Instantanément.",
+    "subtitle2": "Votre maison, plus intelligente que jamais.",
+    "ctaLearn": "En savoir plus",
+    "ctaBuy": "Acheter",
+     "Services": {
+      "Light": {
+        "title": "Éclairage Intelligent",
+        "subtitle": "Contrôlez chaque lumière depuis votre smartphone",
+        "price": "À partir de 45 000 FCFA"
+      },
+      "Security": {
+        "title": "Sécurité & Surveillance",
+        "subtitle": "Caméras HD, alarmes et contrôle d'accès",
+        "price": "À partir de 120 000 FCFA"
+      },
+      "Clima": {
+        "title": "Climatisation Intelligente",
+        "subtitle": "Optimisez votre consommation d'énergie",
+        "price": "À partir de 85 000 FCFA"
+      },
+      "FullPack": {
+        "title": "Pack Maison Complète",
+        "subtitle": "Solutions intelligentes pour toute la maison",
+        "price": "Sur devis personnalisé"
+      }
+    },
+
+
+     "Event": {
+      "title": "L'Événement Shopping Apple Store",
+      "subtitle": "Recevez une carte cadeau Apple pour tout achat éligible.",
+      "button": "En savoir plus",
+      "date": "Débute le 28.11",
+      "note": "1"
+    },
+    "HomeAutomation": {
+      "title": "Transformez votre maison en maison intelligente",
+      "subtitle": "Solutions de domotique sur mesure pour le Sénégal.",
+      "description": "Contrôle, sécurité et confort à portée de main.",
+      "buttonDiscover": "Découvrir nos solutions",
+      "buttonQuote": "Demander un devis"
+    }
+    
+
+  },
+  "home": {
+    "services": {
+      "title": "Nos Services Domotiques",
+      "subtitle": "Transformez votre maison en espace intelligent et connecté",
+      "lighting": {
+        "title": "Éclairage Intelligent",
+        "description": "Contrôlez l'ambiance de chaque pièce depuis votre smartphone",
+        "price": "À partir de 45 000 FCFA",
+        "optimal": "Luminosité optimale"
+      },
+      "security": {
+        "title": "Sécurité & Surveillance",
+        "description": "Caméras HD, alarmes et contrôle d'accès",
+        "price": "À partir de 120 000 FCFA"
+      },
+      "climate": {
+        "title": "Climatisation Intelligente",
+        "description": "Optimisez votre consommation d'énergie",
+        "price": "À partir de 85 000 FCFA",
+        "optimal": "Température optimale"
+      },
+      "complete": {
+        "title": "Pack Maison Complète",
+        "description": "Solution tout-en-un pour votre domicile",
+        "price": "Sur devis personnalisé"
+      },
+      "shutters": {
+      "title": "Volets & stores connectés",
+      "description": "Automatisez l'ouverture et la fermeture selon le soleil ou l'heure.",
+      "price": "À partir de 200000 FCFA"
+    },
+
+    "audio": {
+      "title": "Audio multiroom",
+      "description": "Diffusez votre musique dans toute la maison.",
+      "price": "À partir de 450000 FCFA"
+    },
+
+    "garden": {
+      "title": "Arrosage intelligent",
+      "description": "Arrosage automatique selon météo et humidité.",
+      "price": "À partir de 250000 FCFA"
+    },
+
+    "access": {
+      "title": "Contrôle d’accès",
+      "description": "Ouvrez portail, garage ou porte d’entrée depuis votre smartphone.",
+      "price": "À partir de 150000 FCFA"
+    }
+    }
+  },
+  "home2": {
+    "products": {
+      "switches": {
+        "title": "Interrupteurs Tactiles",
+        "description": "Contrôle moderne et élégant de votre éclairage",
+        "cta": "Voir les modèles"
+      },
+      "cameras": {
+        "title": "Caméras IP HD",
+        "feature1": "Vision nocturne & détection de mouvement",
+        "feature2": "Surveillance 24/7 depuis votre téléphone",
+        "cta1": "En savoir plus",
+        "cta2": "Commander"
+      },
+      "thermostats": {
+        "title": "Thermostats Intelligents",
+        "description": "Économisez jusqu'à 30% sur votre facture d'électricité",
+        "optimal": "Climat optimal",
+        "cta1": "Découvrir",
+        "cta2": "Acheter"
+      },
+      "locks": {
+        "title": "Serrures Connectées",
+        "description": "Accès sécurisé par smartphone, code ou empreinte",
+        "cta1": "Voir détails",
+        "cta2": "Commander"
+      },
+      "installation": {
+        "title": "Installation Professionnelle",
+        "description": "Nos techniciens certifiés installent et configurent tous vos équipements",
+        "cta": "Prendre rendez-vous"
+      },
+      "support": {
+        "title": "Support 24/7",
+        "description": "Assistance technique disponible en français et en wolof",
+        "cta": "Contacter le support"
+      }
+    }
+  },
+  "home3": {
+    "carousel": {
+      "title": "Votre Maison Intelligente",
+      "subtitle": "Une journée parfaitement orchestrée, du matin au soir",
+      "morning": {
+        "time": "Matinée • 7h00",
+        "title": "Réveil en Douceur",
+        "description": "Votre journée commence parfaitement avec un réveil progressif et automatisé",
+        "cta": "Découvrir"
+      },
+      "evening": {
+        "time": "Soirée • 20h30",
+        "title": "Mode Cinéma",
+        "description": "L'ambiance parfaite pour se détendre en famille",
+        "cta": "Découvrir"
+      },
+      "night": {
+        "time": "Nuit • 23h00",
+        "title": "Protection Nocturne",
+        "description": "Dormez en toute sérénité avec une sécurité active 24/7",
+        "cta": "Découvrir"
+      }
+    }
   }
+ 
+
+  
 }

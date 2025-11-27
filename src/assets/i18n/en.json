@@ -317,7 +317,7 @@
   "info": {
     "title": "Contact Information",
     "address": "123 Example Street, Dakar, Senegal",
-    "phone": "+221 77 123 45 67",
+    "phone": "+221 78 672 22 22",
     "email": "contact@mycompany.com",
     "hours": "Mon - Fri: 9am - 6pm"
   },
@@ -356,5 +356,170 @@
   "details": {
     "title": "Back to products"
   }
-}
+},
+
+
+
+
+
+  "SmartHomeHub": {
+    "title": "Smart Home Hub",
+    "subtitle1": "Control everything. Instantly.",
+    "subtitle2": "Your home, smarter than ever.",
+    "ctaLearn": "Learn more",
+    "ctaBuy": "Buy",
+    "Services": {
+      "Light": {
+        "title": "Éclairage Intelligent",
+        "subtitle": "Contrôlez chaque lumière depuis votre smartphone",
+        "price": "À partir de 45 000 FCFA"
+      },
+      "Security": {
+        "title": "Sécurité & Surveillance",
+        "subtitle": "Caméras HD, alarmes et contrôle d'accès",
+        "price": "À partir de 120 000 FCFA"
+      },
+      "Clima": {
+        "title": "Climatisation Intelligente",
+        "subtitle": "Optimisez votre consommation d'énergie",
+        "price": "À partir de 85 000 FCFA"
+      },
+      "FullPack": {
+        "title": "Pack Maison Complète",
+        "subtitle": "Solutions intelligentes pour toute la maison",
+        "price": "Sur devis personnalisé"
+      }
+    },
+    "Event": {
+      "title": "The Apple Store Shopping Event",
+      "subtitle": "Get an Apple Gift Card with an eligible purchase.",
+      "button": "Learn more",
+      "date": "Starts 11.28",
+      "note": "1"
+    },
+     "HomeAutomation": {
+      "title": "Transform your home into a smart home",
+      "subtitle": "Tailor-made smart home solutions for Senegal.",
+      "description": "Control, security, and comfort at your fingertips.",
+      "buttonDiscover": "Discover our solutions",
+      "buttonQuote": "Request a quote"
+    }
+  },
+
+  "home": {
+    "services": {
+      "title": "Our Smart Home Services",
+      "subtitle": "Transform your house into an intelligent and connected space",
+      "lighting": {
+        "title": "Smart Lighting",
+        "description": "Control the ambiance of each room from your smartphone",
+        "price": "Starting from 45,000 FCFA",
+        "optimal": "Optimal brightness"
+      },
+      "security": {
+        "title": "Security & Surveillance",
+        "description": "HD cameras, alarms and access control",
+        "price": "Starting from 120,000 FCFA"
+      },
+      "climate": {
+        "title": "Smart Climate Control",
+        "description": "Optimize your energy consumption",
+        "price": "Starting from 85,000 FCFA",
+        "optimal": "Optimal temperature"
+      },
+      "complete": {
+        "title": "Complete Home Package",
+        "description": "All-in-one solution for your home",
+        "price": "Custom quote"
+      },
+      "shutters": {
+        "title": "Smart blinds & shutters",
+        "description": "Automate opening and closing based on sunlight, schedules, or presence.",
+        "price": "From 200000 FCFA"
+      },
+
+      "audio": {
+        "title": "Multi-room audio",
+        "description": "Stream your music seamlessly in every room of your home.",
+        "price": "From 450000 FCFA"
+      },
+
+      "garden": {
+        "title": "Smart irrigation",
+        "description": "Automatic watering based on weather, soil humidity, and plant needs.",
+        "price": "From 250000 FCFA"
+      },
+
+      "access": {
+        "title": "Smart access control",
+        "description": "Open your gate, garage, or front door directly from your smartphone.",
+        "price": "From 150000 FCFA"
+      }
+    }
+  },
+  "home2": {
+    "products": {
+      "switches": {
+        "title": "Touch Switches",
+        "description": "Modern and elegant control of your lighting",
+        "cta": "View models"
+      },
+      "cameras": {
+        "title": "HD IP Cameras",
+        "feature1": "Night vision & motion detection",
+        "feature2": "24/7 monitoring from your phone",
+        "cta1": "Learn more",
+        "cta2": "Order"
+      },
+      "thermostats": {
+        "title": "Smart Thermostats",
+        "description": "Save up to 30% on your electricity bill",
+        "optimal": "Optimal climate",
+        "cta1": "Discover",
+        "cta2": "Buy"
+      },
+      "locks": {
+        "title": "Smart Locks",
+        "description": "Secure access via smartphone, code or fingerprint",
+        "cta1": "View details",
+        "cta2": "Order"
+      },
+      "installation": {
+        "title": "Professional Installation",
+        "description": "Our certified technicians install and configure all your equipment",
+        "cta": "Book appointment"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Technical assistance available in French and Wolof",
+        "cta": "Contact support"
+      }
+    }
+  },
+  "home3": {
+    "carousel": {
+      "title": "Your Smart Home",
+      "subtitle": "A perfectly orchestrated day, from morning to night",
+      "morning": {
+        "time": "Morning • 7:00 AM",
+        "title": "Gentle Wake Up",
+        "description": "Your day starts perfectly with progressive and automated wake-up",
+        "cta": "Discover"
+      },
+      "evening": {
+        "time": "Evening • 8:30 PM",
+        "title": "Cinema Mode",
+        "description": "The perfect ambiance to relax with family",
+        "cta": "Discover"
+      },
+      "night": {
+        "time": "Night • 11:00 PM",
+        "title": "Night Protection",
+        "description": "Sleep peacefully with 24/7 active security",
+        "cta": "Discover"
+      }
+    }
+  }
+  
+
 }

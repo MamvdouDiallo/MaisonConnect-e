@@ -1,13 +1,31 @@
 <!-- Fond dynamique -->
 <div class="absolute inset-0 bg-gradient-to-br  from-gray-50 to-gray-100 dark:from-gray-950 dark:to-black -z-10"></div>
+<app-hero-domotique></app-hero-domotique>
+<!-- <app-produits-domotique></app-produits-domotique> -->
+<app-smarthub-pro></app-smarthub-pro>
+<app-iphone-air></app-iphone-air>
+
+<app-produits-grid-domotique></app-produits-grid-domotique>
+<!-- <app-projets-carousel-domotique></app-projets-carousel-domotique>
+<app-scenarios-carousel-domotique></app-scenarios-carousel-domotique> -->
+<app-smart-home-carousel></app-smart-home-carousel>
+<app-services-domotique></app-services-domotique>
+
+
+
+<!-- <app-iphone-pro></app-iphone-pro>
+<app-iphone-air></app-iphone-air>
+<app-products-grid></app-products-grid>
+<app-tv-carousel></app-tv-carousel>
+<app-services-carousel></app-services-carousel> -->
+
 
 <!-- Section Maison Connectée -->
-<app-smart-home-section></app-smart-home-section>
+<!-- <app-smart-home-section></app-smart-home-section> -->
 
 <!-- Hero Section -->
-<section class="relative px-4 md:px-6 lg:px-8 py-20 lg:py-32 max-w-7xl mx-auto">
+<!-- <section class="relative px-4 md:px-6 lg:px-8 py-20 lg:py-32 max-w-7xl mx-auto">
   <div class="grid lg:grid-cols-2 gap-12 items-center">
-    <!-- Texte -->
     <div class="space-y-6 animate-fade-up">
       <h1 class="text-5xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight">
         {{ 'home.hero.title' | translate }}
@@ -27,7 +45,6 @@
       </div>
     </div>
 
-    <!-- Image Hero -->
     <div class="relative group">
       <div class="absolute -inset-4 bg-gradient-to-r from-gray-900/20 to-gray-600/20 dark:from-white/10 dark:to-gray-400/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
       <div class="relative">
@@ -37,9 +54,8 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- Section Produits Vedettes -->
+</section> -->
+<!-- 
 <section class="px-4 md:px-6 lg:px-8 py-20 max-w-7xl mx-auto">
   <div class="text-center mb-12">
     <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
@@ -74,10 +90,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Section Packs -->
-<section class="px-4 md:px-6 lg:px-8 py-20 bg-gray-100 dark:bg-gray-900/50">
+<!-- <section class="px-4 md:px-6 lg:px-8 py-20 bg-gray-100 dark:bg-gray-900/50">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-12">
       <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
@@ -103,10 +119,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Section Services -->
-<section class="px-4 md:px-6 lg:px-8 py-20 max-w-7xl mx-auto">
+<!-- <section class="px-4 md:px-6 lg:px-8 py-20 max-w-7xl mx-auto">
   <div class="text-center mb-12">
     <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
       {{ 'home.services.title' | translate }}
@@ -135,10 +151,10 @@
       </ul>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Section Réalisations (Carousel) -->
-<section class="px-4 md:px-6 lg:px-8 py-20 bg-gray-100 dark:bg-gray-900/50">
+<!-- <section class="px-4 md:px-6 lg:px-8 py-20 bg-gray-100 dark:bg-gray-900/50">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-12 text-center">
       {{ 'home.realizations.title' | translate }}
@@ -158,7 +174,6 @@
         </div>
       </div>
       
-      <!-- Contrôles -->
       <button (click)="prev()" 
               class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 dark:bg-black/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white dark:hover:bg-black transition-all shadow-lg">
         <svg class="w-6 h-6 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,7 +187,6 @@
         </svg>
       </button>
 
-      <!-- Indicateurs -->
       <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
         <button *ngFor="let p of products; let i = index" 
                 (click)="currentIndex = i"
@@ -183,10 +197,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Section Témoignages -->
-<section class="px-4 md:px-6 lg:px-8 py-20 max-w-7xl mx-auto">
+<!-- <section class="px-4 md:px-6 lg:px-8 py-20 max-w-7xl mx-auto">
   <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-12 text-center">
     {{ 'home.testimonials.title' | translate }}
   </h2>
@@ -211,10 +225,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Contrôles -->
-    <button (click)="prevTestimonial()" 
+    <!-- <button (click)="prevTestimonial()" 
             class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-all shadow-lg">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -225,10 +239,10 @@
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
       </svg>
-    </button>
+    </button> -->
 
     <!-- Indicateurs -->
-    <div class="flex justify-center gap-2 mt-8">
+    <!-- <div class="flex justify-center gap-2 mt-8">
       <button *ngFor="let t of testimonials; let i = index" 
               (click)="testimonialIndex = i"
               class="w-2 h-2 rounded-full transition-all duration-300"
@@ -240,37 +254,6 @@
     </div>
   </div>
 </section>
-
-<!-- Section Articles -->
-<!-- <section class="px-4 md:px-6 lg:px-8 py-20 bg-gray-100 dark:bg-gray-900/50">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-12 text-center">
-      {{ 'home.inspire.title' | translate }}
-    </h2>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <article *ngFor="let a of articles" 
-               class="group bg-white dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-800">
-        <div class="h-56 overflow-hidden">
-          <img [src]="a.image" 
-               [alt]="a.title" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
-        </div>
-        <div class="p-6">
-          <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">{{ a.date }}</span>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mt-2 mb-3">{{ a.title }}</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-4">{{ a.summary }}</p>
-          <a href="#" class="inline-flex items-center gap-2 text-gray-900 dark:text-white font-semibold hover:gap-3 transition-all">
-            {{ 'home.inspire.readMore' | translate }}
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section> -->
 <section class="px-4 md:px-6 lg:px-8 py-20 bg-gray-100 dark:bg-gray-900/50">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-12 text-center">
@@ -298,10 +281,10 @@
       </article>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Section Pourquoi Nous -->
-<section class="px-4 md:px-6 lg:px-8 py-20 max-w-7xl mx-auto">
+<!-- <section class="px-4 md:px-6 lg:px-8 py-20 max-w-7xl mx-auto">
   <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-12 text-center">
     {{ 'home.whyUs.title' | translate }}
   </h2>
@@ -316,10 +299,10 @@
       <p class="text-gray-600 dark:text-gray-400">{{ w.description }}</p>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Section FAQ -->
-<section class="px-4 md:px-6 lg:px-8 py-20 bg-gray-100 dark:bg-gray-900/50">
+<!-- <section class="px-4 md:px-6 lg:px-8 py-20 bg-gray-100 dark:bg-gray-900/50">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 text-center">
       {{ 'home.faqs.title' | translate }}
@@ -354,7 +337,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Animations CSS -->
 <style>
