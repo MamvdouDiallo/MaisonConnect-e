@@ -7,32 +7,29 @@ import { RootService } from '../../shared/services/root.service';
 import { SnackBarService } from '../../shared/services/snackBar.service';
 
 interface FormData {
-  // Step 1
-  serviceType: string;
-  residenceType: string;
-  estimatedDate: string;
-  // Step 2 - Project Types (checkboxes)
+  // Step 1 - Types de projets (checkboxes)
   securityElectronic: boolean;
   smartHome: boolean;
   solarInstallation: boolean;
   premiumFinishes: boolean;
   completeProject: boolean;
 
-  // Step 2 - Installation Details
+  // Step 2 - Informations sur le site d'installation
   propertyType: string;
   address: string;
   surface: string;
   floors: string;
   currentState: string;
   projectNeeds: string;
+  
+  // Step 2 - Budget et date
   budget: string;
   interventionDate: string;
 
-  // Step 3
+  // Step 3 - Coordonnées
   name: string;
   phone: string;
   email: string;
-  acceptTerms: boolean;
 }
 
 @Component({
@@ -42,32 +39,23 @@ interface FormData {
   templateUrl: './devis.component.html',
   styleUrl: './devis.component.scss'
 })
-  export class DevisComponent implements OnInit,OnDestroy {
-
-// Pour indiquer le chargement (spinner)
+export class DevisComponent implements OnInit, OnDestroy {
   loadData: boolean = false;
-// Pour gérer les subscriptions et éviter les memory leaks
   private destroy$ = new Subject<void>();
-  private  baseService= inject(RootService)
-  private snackbar= inject(SnackBarService)
+  private baseService = inject(RootService);
+  private snackbar = inject(SnackBarService);
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
 
-    ngOnInit(): void {
-    }
- 
-
+  ngOnInit(): void {}
 
   currentStep = 1;
   totalSteps = 3;
 
   formData: FormData = {
-    serviceType: '',
-    residenceType: '',
-    estimatedDate: '',
     securityElectronic: false,
     smartHome: false,
     solarInstallation: false,
@@ -83,23 +71,8 @@ interface FormData {
     interventionDate: '',
     name: '',
     phone: '',
-    email: '',
-    acceptTerms: false
+    email: ''
   };
-
-  serviceTypes = [
-    { value: 'installation', labelKey: 'devis.services.installation' },
-    { value: 'maintenance', labelKey: 'devis.services.maintenance' },
-    { value: 'consultation', labelKey: 'devis.services.consultation' },
-    { value: 'upgrade', labelKey: 'devis.services.upgrade' }
-  ];
-
-  residenceTypes = [
-    { value: 'maison', labelKey: 'devis.residence.house' },
-    { value: 'appartement', labelKey: 'devis.residence.apartment' },
-    { value: 'bureau', labelKey: 'devis.residence.office' },
-    { value: 'commerce', labelKey: 'devis.residence.commercial' }
-  ];
 
   propertyTypes = [
     { value: 'villa', labelKey: 'devis.propertyTypes.villa' },
@@ -147,50 +120,86 @@ interface FormData {
   isCurrentStepValid(): boolean {
     switch (this.currentStep) {
       case 1:
-        return !!(this.formData.serviceType && this.formData.residenceType && this.formData.estimatedDate);
+        // Au moins un type de projet doit être sélectionné
+        return !!(
+          this.formData.securityElectronic ||
+          this.formData.smartHome ||
+          this.formData.solarInstallation ||
+          this.formData.premiumFinishes ||
+          this.formData.completeProject
+        );
       case 2:
-        // At least one project type should be selected and basic info filled
-        const hasProjectType = this.formData.securityElectronic || this.formData.smartHome || 
-                              this.formData.solarInstallation || this.formData.premiumFinishes || 
-                              this.formData.completeProject;
-        return !!(hasProjectType && this.formData.propertyType && this.formData.address && 
-                  this.formData.surface && this.formData.floors && this.formData.currentState);
+        // Informations de base du site remplies
+        return !!(
+          this.formData.propertyType &&
+          this.formData.address &&
+          this.formData.surface &&
+          this.formData.floors &&
+          this.formData.currentState
+        );
       case 3:
-        return !!(this.formData.name && this.formData.phone && this.formData.email && this.formData.acceptTerms);
+        // Coordonnées complètes
+        return !!(this.formData.name && this.formData.phone && this.formData.email);
       default:
         return false;
     }
   }
+
   submitForm(): void {
-    if (this.isCurrentStepValid()) {
-      console.log('Form submitted:', this.formData);
-      // Ici vous pouvez ajouter votre logique d'envoi
-      alert('Votre demande de devis a été envoyée avec succès !');
+    if (!this.isCurrentStepValid()) {
+      return;
     }
-     this.snackbar
+
+    this.snackbar
       .showConfirmation(`Voulez-vous vraiment envoyer cette demande de devis ?`)
       .then((result) => {
-        if (result["value"] == true) {
+        if (result['value'] == true) {
           this.loadData = true;
-          this.baseService.add("contact",this.formData)
-          .pipe(takeUntil(this.destroy$))
-          .subscribe(
-            (resp) => {
-              if (resp) {
-                this.snackbar.showSimpleNotification(
-                  "Ok",
-                  "Demande de devis  ajouté avec succés",
-                );
-                this.loadData = false;
-              } else {
+          this.baseService
+            .add('contact', this.formData)
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(
+              (resp) => {
+                if (resp) {
+                  this.snackbar.showSimpleNotification(
+                    'Ok',
+                    'Demande de devis ajoutée avec succès'
+                  );
+                  this.loadData = false;
+                  // Réinitialiser le formulaire
+                  this.resetForm();
+                } else {
+                  this.loadData = false;
+                }
+              },
+              (error) => {
+                console.log(error);
                 this.loadData = false;
               }
-            },
-            (error) => {
-              console.log(error);
-            }
-          );
+            );
         }
       });
-   }
   }
+
+  resetForm(): void {
+    this.currentStep = 1;
+    this.formData = {
+      securityElectronic: false,
+      smartHome: false,
+      solarInstallation: false,
+      premiumFinishes: false,
+      completeProject: false,
+      propertyType: '',
+      address: '',
+      surface: '',
+      floors: '',
+      currentState: '',
+      projectNeeds: '',
+      budget: '',
+      interventionDate: '',
+      name: '',
+      phone: '',
+      email: ''
+    };
+  }
+}

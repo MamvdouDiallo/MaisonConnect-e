@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-hero-domotique',
   standalone: true,
-  imports: [CommonModule,TranslateModule],
+  imports: [CommonModule, TranslateModule, RouterLink],
   template: `
 <section class="relative min-h-screen bg-gradient-to-br from-[#0a1628] via-[#132a45] to-[#1a3a5c] overflow-hidden flex items-center justify-center px-4 py-20">
   
@@ -81,9 +82,11 @@ import { TranslateModule } from '@ngx-translate/core';
       <button class="bg-[#0071e3] hover:bg-[#0077ed] text-white px-8 py-3 rounded-full text-base md:text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/20">
         {{ 'SmartHomeHub.HomeAutomation.buttonDiscover' | translate }}
       </button>
+       <a href="" routerLink="/devis">
       <button class="border-2 border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-8 py-3 rounded-full text-base md:text-lg font-medium transition-all duration-300">
-        {{ 'SmartHomeHub.HomeAutomation.buttonQuote' | translate }}
+       {{ 'SmartHomeHub.HomeAutomation.buttonQuote' | translate }}
       </button>
+        </a>
     </div>
   </div>
 

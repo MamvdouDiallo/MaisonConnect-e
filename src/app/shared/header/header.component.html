@@ -1,161 +1,287 @@
-<header class="sticky p-2 top-0 z-50 backdrop-blur-xl bg-white/60 dark:bg-black/40 border-b border-black/10">
-  <nav class="container-apple h-12 flex items-center justify-between px-4">
-    <a routerLink="/" class="text-xl font-semibold tracking-tight hover:opacity-70 transition">
+<header class="sticky top-0 z-50  bg-white/80 dark:bg-black/80 border-b border-black/10 dark:border-white/10">
+  <nav class="container-apple h-11 flex items-center justify-between px-4 max-w-7xl mx-auto">
+    
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center hover:opacity-70 transition-opacity">
       <img 
-  src="assets/images/domotique.PNG" 
-  alt="Domotique Senegal Logo"
-  class="h-8 md:h-10 lg:h-12 object-contain rounded-full"
-/>
+        src="assets/images/logo_loneed.jpg" 
+        alt="Domotique Senegal Logo"
+        class="h-7 w-7 object-contain rounded-full"
+      />
     </a>
-    <ul class="hidden md:flex items-center gap-8 text-sm text-gray-800 dark:text-gray-200">
 
-      <li *ngFor="let group of menu; index as i" class="relative dropdown-container">
-
-        <button 
-          (click)="toggleMenu(i)"
-          class="cursor-pointer hover:text-black dark:hover:text-white transition focus:outline-none flex items-center gap-1"
+    <!-- Desktop Menu -->
+    <ul class="hidden lg:flex items-center gap-6 text-xs font-normal text-gray-600 dark:text-gray-400">
+      
+      <!-- Regular menu items -->
+      <li *ngFor="let item of menuItems">
+        <a 
+          [routerLink]="item.link"
+          routerLinkActive="text-black dark:text-white"
+          class="hover:text-black dark:hover:text-white transition-colors py-1"
         >
-          {{ group.label }}
-          <span class="text-xs opacity-60">▾</span>
-        </button>
-
-        <ul
-          *ngIf="activeMenu() === i"
-          class="absolute left-1/2 -translate-x-1/2 top-7
-                 bg-white/85 dark:bg-black/70 backdrop-blur-xl
-                 shadow-xl border border-black/10 rounded-xl
-                 py-4 px-5 min-w-[230px] animate-fadeIn"
-        >
-          <li *ngFor="let item of group.children" class="py-1.5">
-            <a
-              [routerLink]="item.link"
-              (click)="closeMenu()"
-              class="block text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
-            >
-              {{ ('nav.' + item.key) | translate }}
-            </a>
-          </li>
-        </ul>
-
+          {{ item.labelKey | translate }}
+        </a>
       </li>
 
+      <!-- Boutique avec mega menu -->
+      <li 
+        class="relative"
+        (mouseenter)="showSubmenu('boutique')"
+        (mouseleave)="hideSubmenu()"
+      >
+        <a 
+          [routerLink]="boutiqueMenu.link"
+          routerLinkActive="text-black dark:text-white"
+          class="hover:text-black dark:hover:text-white transition-colors flex items-center gap-0.5 cursor-pointer py-1"
+        >
+          {{ boutiqueMenu.labelKey | translate }}
+          <span class="text-[10px] opacity-50">▾</span>
+        </a>
+
+        <!-- Mega Menu Dropdown -->
+        <div
+          *ngIf="hoverMenu() === 'boutique'"
+          class="absolute left-1/2 -translate-x-1/2 top-full mt-1
+                 bg-white/95 dark:bg-black/95 backdrop-blur-2xl
+                 shadow-2xl border border-black/5 dark:border-white/5 rounded-xl
+                 py-3 px-4 min-w-[240px] animate-fadeIn"
+        >
+          <div class="space-y-0.5">
+            
+            <a
+              *ngFor="let item of boutiqueMenu.submenu"
+              [routerLink]="item.link"
+              class="flex items-center gap-2.5 px-3 py-2 rounded-lg
+                     text-sm text-gray-700 dark:text-gray-300
+                     hover:bg-gray-100 dark:hover:bg-zinc-800/80
+                     hover:text-black dark:hover:text-white
+                     transition-all group"
+            >
+              <span class="text-lg group-hover:scale-105 transition-transform">{{ item.icon }}</span>
+              <span class="font-medium">{{ item.labelKey | translate }}</span>
+            </a>
+          </div>
+        </div>
+      </li>
     </ul>
 
-    <div class="hidden md:flex items-center gap-4">
-
+    <!-- Desktop Actions -->
+    <div class="hidden lg:flex items-center gap-3">
+      
+      <!-- Language Switcher -->
       <div class="relative lang-switcher">
         <button
           (click)="toggleLangMenu()"
-          class="flex items-center gap-1 px-2 py-1 rounded-full
-                 hover:bg-gray-200 dark:hover:bg-zinc-700
-                 transition"
+          class="flex items-center gap-1 px-2 py-1 rounded-md text-xs
+                 hover:bg-gray-100 dark:hover:bg-zinc-800/80
+                 transition-colors"
         >
-          <span class="text-lg">{{ flags[currentLang()] }}</span>
-          <span class="text-sm">{{ currentLang().toUpperCase() }}</span>
-          <span class="text-xs opacity-60">▾</span>
+          <span class="text-sm">{{ flags[currentLang()] }}</span>
+          <span class="font-medium">{{ currentLang().toUpperCase() }}</span>
+          <span class="text-[10px] opacity-50">▾</span>
         </button>
 
         <div
           *ngIf="langMenuOpen()"
-          class="absolute right-0 mt-2 w-32
-                 bg-white/80 dark:bg-black/70 backdrop-blur-xl
-                 shadow-xl border border-black/10 rounded-xl
-                 py-2 animate-fadeIn"
+          class="absolute right-0 mt-1 w-32
+                 bg-white/95 dark:bg-black/95 backdrop-blur-2xl
+                 shadow-xl border border-black/5 dark:border-white/5 rounded-xl
+                 py-2 animate-fadeIn overflow-hidden"
         >
           <button
             *ngFor="let l of langs"
             (click)="setLang(l)"
-            class="w-full text-left px-3 py-2 flex items-center gap-2
-                   hover:bg-gray-200/70 dark:hover:bg-zinc-700 transition"
+            [class.bg-gray-100]="currentLang() === l"
+            [class.dark:bg-zinc-800]="currentLang() === l"
+            class="w-full text-left px-3 py-2 flex items-center gap-2 text-xs
+                   hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition-colors"
           >
-            <span class="text-xl">{{ flags[l] }}</span>
-            <span>{{ l.toUpperCase() }}</span>
+            <span class="text-base">{{ flags[l] }}</span>
+            <span class="font-medium">{{ l.toUpperCase() }}</span>
           </button>
         </div>
       </div>
 
+      <!-- Theme Toggle -->
       <button
-        class="text-sm px-2 py-1 rounded-full bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 transition"
+        class="text-base px-2 py-1 rounded-md
+               hover:bg-gray-100 dark:hover:bg-zinc-800/80
+               transition-colors"
         (click)="toggleTheme()"
       >
-        🌙
+        <span class="dark:hidden">🌙</span>
+        <span class="hidden dark:inline">☀️</span>
       </button>
-<button class="relative">
-  🛒
-  <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
-    {{ (cartService.cart$ | async)?.length || 0 }}
-  </span>
-</button>
 
+      <!-- Cart -->
+      <a routerLink="/cart" class="relative px-2 py-1 rounded-md
+                                   hover:bg-gray-100 dark:hover:bg-zinc-800/80
+                                   transition-colors">
+        <span class="text-base">🛒</span>
+        <span 
+          *ngIf="cartLength > 0"
+          class="absolute -top-0.5 -right-0.5 bg-red-500 text-white 
+                 rounded-full w-4 h-4 text-[10px] flex items-center justify-center
+                 font-semibold shadow-md"
+        >
+          {{ cartLength }}
+        </span>
+      </a>
 
+      <!-- Devis Button -->
+      <a 
+        routerLink="/devis"
+        class="px-3 py-1 rounded-md bg-black dark:bg-white 
+               text-white dark:text-black text-xs font-medium
+               hover:bg-gray-800 dark:hover:bg-gray-200
+               transition-colors"
+      >
+        {{ 'nav.devis' | translate }}
+      </a>
     </div>
 
-    <button class="md:hidden text-xl" (click)="open.set(!open())">☰</button>
+    <!-- Mobile Menu Button -->
+    <button 
+      class="lg:hidden text-xl p-1.5 hover:bg-gray-100 dark:hover:bg-zinc-800/80 rounded-md transition-colors" 
+      (click)="open.set(!open())"
+    >
+      <span *ngIf="!open()">☰</span>
+      <span *ngIf="open()">✕</span>
+    </button>
   </nav>
 
-  <div *ngIf="open()" class="md:hidden border-t border-black/10 bg-white/90 dark:bg-black/70 backdrop-blur-xl">
-    <ul class="px-4 py-4 space-y-4">
-
-      <li *ngFor="let group of menu; index as gi">
-        <div class="flex justify-between items-center cursor-pointer"
-             (click)="submenuOpen() === gi ? submenuOpen.set(null) : submenuOpen.set(gi)">
-          <span class="text-base font-medium">{{ group.label }}</span>
-          <span class="text-lg">▾</span>
-        </div>
-
-        <ul *ngIf="submenuOpen() === gi" class="pl-4 mt-2 space-y-2">
-          <li *ngFor="let item of group.children">
-            <a
-              [routerLink]="item.link"
-              class="block py-1 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
-              (click)="open.set(false)"
-            >
-              {{ ('nav.' + item.key) | translate }}
-            </a>
-          </li>
-        </ul>
+  <!-- Mobile Menu -->
+  <div 
+    *ngIf="open()" 
+    class="lg:hidden border-t border-black/10 dark:border-white/10 
+           bg-white/95 dark:bg-black/95 backdrop-blur-2xl
+           animate-[slideDown_0.3s_ease-out]"
+  >
+    <ul class="px-4 py-4 space-y-0.5 max-w-7xl mx-auto">
+      
+      <!-- Regular menu items -->
+      <li *ngFor="let item of menuItems">
+        <a 
+          [routerLink]="item.link"
+          (click)="closeMobileMenu()"
+          routerLinkActive="bg-gray-100 dark:bg-zinc-800 font-semibold"
+          class="block py-2.5 px-3 rounded-lg text-sm text-gray-700 dark:text-gray-300 
+                 hover:bg-gray-50 dark:hover:bg-zinc-800/50
+                 transition-colors"
+        >
+          {{ item.labelKey | translate }}
+        </a>
       </li>
 
-      <!-- Lang Switch mobile -->
+      <!-- Boutique avec sous-menu -->
       <li>
-        <div class="flex items-center gap-3">
-          <span class="text-sm">Langue :</span>
-
-          <button
-            (click)="submenuOpen() === 999 ? submenuOpen.set(null) : submenuOpen.set(999)"
-            class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700 transition"
+        <button
+          (click)="toggleMobileSubmenu('boutique')"
+          class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-sm
+                 text-gray-700 dark:text-gray-300
+                 hover:bg-gray-50 dark:hover:bg-zinc-800/50
+                 transition-colors"
+        >
+          <span class="font-medium">{{ boutiqueMenu.labelKey | translate }}</span>
+          <span 
+            class="text-base transition-transform duration-200"
+            [ngClass]="{'rotate-180': mobileSubmenuOpen() === 'boutique'}"
           >
-            <span class="text-xl">{{ flags[currentLang()] }}</span>
-            <span>{{ currentLang().toUpperCase() }}</span>
-            <span class="text-xs opacity-60">▾</span>
-          </button>
+            ▾
+          </span>
+        </button>
+
+        <!-- Mobile Submenu -->
+        <div
+          *ngIf="mobileSubmenuOpen() === 'boutique'"
+          class="mt-0.5 ml-3 space-y-0.5 animate-fadeIn"
+        >
+          <a 
+            *ngFor="let item of boutiqueMenu.submenu"
+            [routerLink]="item.link"
+            (click)="closeMobileMenu()"
+            routerLinkActive="bg-gray-100 dark:bg-zinc-800 font-semibold"
+            class="flex items-center gap-2.5 py-2 px-3 rounded-lg text-sm
+                   text-gray-600 dark:text-gray-400
+                   hover:bg-gray-50 dark:hover:bg-zinc-800/50
+                   transition-colors"
+          >
+            <span class="text-base">{{ item.icon }}</span>
+            <span class="text-sm">{{ item.labelKey | translate }}</span>
+          </a>
         </div>
-
-        <ul *ngIf="submenuOpen() === 999" class="pl-4 mt-2 space-y-2">
-          <li *ngFor="let l of langs">
-            <button
-              (click)="setLang(l); submenuOpen.set(null)"
-              class="flex items-center gap-2 py-1 hover:text-black dark:hover:text-white"
-            >
-              <span class="text-xl">{{ flags[l] }}</span>
-              <span>{{ l.toUpperCase() }}</span>
-            </button>
-          </li>
-        </ul>
       </li>
-      <li class="flex items-center gap-3">
-  <span>Panier :</span>
-  <button class="relative px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-zinc-700 transition">
-    🛒
-    <span *ngIf="cartLength > 0" 
-          class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
-      {{ cartLength }}
-    </span>
-  </button>
-</li>
 
+      <!-- Divider -->
+      <li class="py-1.5">
+        <div class="border-t border-black/5 dark:border-white/5"></div>
+      </li>
+
+      <!-- Language -->
+      <li>
+        <div class="px-3 py-2">
+          <span class="text-[10px] font-semibold text-gray-500 dark:text-gray-500 uppercase tracking-wider">
+            {{ 'nav.langue' | translate }}
+          </span>
+          <div class="mt-2 grid grid-cols-3 gap-2">
+            <button
+              *ngFor="let l of langs"
+              (click)="setLang(l)"
+              [ngClass]="{
+                'bg-black text-white dark:bg-white dark:text-black': currentLang() === l,
+                'bg-gray-100 dark:bg-zinc-800': currentLang() !== l
+              }"
+              class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg text-xs
+                     hover:bg-gray-200 dark:hover:bg-zinc-700
+                     transition-colors"
+            >
+              <span class="text-sm">{{ flags[l] }}</span>
+              <span class="font-medium">{{ l.toUpperCase() }}</span>
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <!-- Cart -->
+      <li>
+        <a
+          routerLink="/cart"
+          (click)="closeMobileMenu()"
+          class="flex items-center justify-between py-2.5 px-3 rounded-lg text-sm
+                 hover:bg-gray-50 dark:hover:bg-zinc-800/50
+                 transition-colors"
+        >
+          <span class="text-gray-700 dark:text-gray-300">{{ 'nav.panier' | translate }}</span>
+          <div class="relative">
+            <span class="text-base">🛒</span>
+            <span 
+              *ngIf="cartLength > 0"
+              class="absolute -top-1.5 -right-1.5 bg-red-500 text-white 
+                     rounded-full w-4 h-4 text-[10px] flex items-center justify-center
+                     font-semibold"
+            >
+              {{ cartLength }}
+            </span>
+          </div>
+        </a>
+      </li>
+
+      <!-- Devis Button -->
+      <li class="pt-2">
+        <a
+          routerLink="/devis"
+          (click)="closeMobileMenu()"
+          class="block py-2.5 px-3 rounded-lg text-center text-sm
+                 bg-black dark:bg-white 
+                 text-white dark:text-black
+                 font-semibold
+                 hover:bg-gray-800 dark:hover:bg-gray-200
+                 transition-colors"
+        >
+          {{ 'nav.devis' | translate }}
+        </a>
+      </li>
     </ul>
   </div>
 </header>
-
-

@@ -30,11 +30,9 @@ export class AccessoiresComponent  implements  OnInit , OnDestroy {
 // accessoires: any[] = [];
 
 // Pour indiquer le chargement (spinner)
-loadData: boolean = false;
-
+  loadData: boolean = false;
 // Pour gérer les subscriptions et éviter les memory leaks
- private destroy$ = new Subject<void>();
-
+  private destroy$ = new Subject<void>();
   private  baseService= inject(RootService)
 
 
@@ -127,7 +125,6 @@ ngOnDestroy(): void {
 
 
   cart: { product: Product, quantity: number }[] = [];
-
     addToCart(product: any) {
     const existing = this.cart.find(c => c.product.id === product.id);
     if(existing) {
@@ -137,8 +134,6 @@ ngOnDestroy(): void {
     }
         this.cartService.addToCart(product);
   }
-
-
 
 
 
@@ -165,12 +160,6 @@ getAccessoires() {
       }
     );
 }
-
-
-
-
-
-
 
 
 }

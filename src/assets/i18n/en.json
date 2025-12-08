@@ -1,18 +1,21 @@
 {
   "brand": "Brand",
-  "nav": {
+ "nav": {
     "accueil": "Home",
+    "a-propos": "About",
+    "realisations": "Projects",
+    "blog": "Blog",
+    "boutique": "Shop",
     "securite": "Electronic Security",
     "domotique": "Home Automation",
-    "energie": "Solar Energy",
-    "packs": "Our Packages",
-    "services": "Services",
+    "solaire": "Solar Energy",
+    "packs": "Our Packs",
     "accessoires": "Accessories",
-    "shop": "Shop",
-    "devis": "Request a Quote",
-    "support": "Support",
-    "contact": "Contact Us",
-    "recherche": "Search"
+    "devis": "Quote",
+    "panier": "Cart",
+    "langue": "Language",
+    "contact": "Contact"
+    
   },
   "cta": {
     "learnMore": "Learn more",
@@ -159,32 +162,33 @@
     }
   },
 
-  "footer": {
-    "promo": "Enjoy our special offers!",
-    "privacy": "Privacy Policy",
-    "terms": "Terms & Conditions",
-    "sitemap": "Sitemap",
-    "columns": {
-      "produits": "Products",
-      "services": "Services",
+"footer": {
+  "promo": "Take advantage of our exceptional offers!",
+  "rights": "All rights reserved",
+  "privacy": "Privacy Policy",
+  "terms": "Terms and Conditions",
+  "sitemap": "Sitemap",
+  "columns": {
+    "entreprise": "Company",
+    "solutions": "Solutions",
+    "services": "Services",
+    "contact": "Contact",
+    "links": {
+      "accueil": "Home",
+      "a-propos": "About",
+      "realisations": "Projects",
+      "blog": "Blog",
+      "securite": "Security",
+      "domotique": "Home Automation",
+      "solaire": "Solar",
+      "finitions": "Finishes",
+      "devis": "Quote",
       "boutique": "Shop",
-      "contact": "Contact",
-      "links": {
-        "securite": "Security",
-        "domotique": "Home Automation",
-        "energie": "Energy",
-        "packs": "Packs",
-        "accessoires": "Accessories",
-        "services": "Services",
-        "support": "Support",
-        "devis": "Quote",
-        "shop": "Shop",
-        "contact": "Contact",
-        "recherche": "Search"
-      }
+      "assistance": "Support",
+      "contact": "Contact"
     }
-  },
-
+  }
+},
   "securite": {
     
       "title": "Electronic Security",
@@ -521,139 +525,63 @@
     }
   },
 
-  "devis": {
-    "title": "Request Your Free Quote",
-    "subtitle": "Get a professional quote at no cost!",
+ "devis": {
+    "title": "Free Quote Request",
+    "subtitle": "Get a personalized estimate for your project",
+    
     "step1": {
-      "title": "Project Information",
-      "serviceType": "Service Type",
-      "selectService": "Select a service type",
-      "residenceType": "Property Type",
-      "selectResidence": "Select a property type",
-      "estimatedDate": "Estimated Completion Date"
+      "title": "What type of project would you like to undertake?",
+      "security": "Electronic security (alarm, video surveillance, access control)",
+      "smartHome": "Home automation (smart home, automation)",
+      "solar": "Solar installation (photovoltaic panels, inverters)",
+      "finishes": "Premium finishes (lighting, designer outlets)",
+      "complete": "Complete turnkey project"
     },
+    
     "step2": {
-      "title": "Project Details",
-      "projectDetails": "Tell us as much as possible about your request",
-      "detailsPlaceholder": "Describe your project in detail...",
-      "projectAddress": "Project Address",
-      "addressPlaceholder": "Ex: 123 Main Street",
-      "postalCode": "Postal Code",
-      "city": "City"
-    },
-    "step3": {
-      "title": "Your Contact Information",
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "email": "Email",
-      "phone": "Phone",
-      "acceptTerms": "I have read and accept the",
-      "termsLink": "Terms of Service"
-    },
-    "services": {
-      "installation": "Complete Installation",
-      "maintenance": "Maintenance and Repair",
-      "consultation": "Consultation and Advisory",
-      "upgrade": "System Upgrade"
-    },
-    "residence": {
-      "house": "House",
-      "apartment": "Apartment",
-      "office": "Office",
-      "commercial": "Commercial Space"
-    },
-    "buttons": {
-      "previous": "Previous",
-      "next": "Next",
-      "submit": "Submit Request"
-    },
-    "trust": {
-      "item1": {
-        "title": "100% Free Quote",
-        "text": "Receive a detailed estimate with no obligation on your part"
-      },
-      "item2": {
-        "title": "Quick Response",
-        "text": "An expert will contact you within 24 hours to schedule a technical visit"
-      },
-      "item3": {
-        "title": "Secure Data",
-        "text": "Your information is protected and will never be shared"
-      }
-    }
-  },
-  "devis": {
-    "title": "Request Your Free Quote",
-    "subtitle": "Get a professional quote at no cost!",
-    "step1": {
-      "title": "Project Information",
-      "serviceType": "Service Type",
-      "selectService": "Select a service type",
-      "residenceType": "Property Type",
-      "selectResidence": "Select a property type",
-      "estimatedDate": "Estimated Completion Date"
-    },
-    "step2": {
-      "title": "I would like to get a quote for a project concerning:",
-      "subtitle": "Check / specify",
-      "projectTypes": "Project Types",
-      "security": "Electronic security (cameras, alarm, access control...)",
-      "smartHome": "Home automation / smart home",
-      "solar": "Solar installation (off-grid, hybrid or back-up)",
-      "finishes": "High-end interior finishes",
-      "complete": "Complete project (security + home automation + solar + finishes)",
-      "siteInfo": "Installation Site Information",
-      "propertyType": "Property Type",
-      "selectProperty": "Select a property type",
+      "title": "Installation site information",
+      "propertyType": "Property type",
+      "selectProperty": "Select property type",
       "address": "Address or area",
       "surface": "Surface area",
       "floors": "Floors",
       "selectFloors": "Select floors",
       "currentState": "Current state",
       "selectState": "Select current state",
-      "needsDetails": "Needs Details",
-      "needsSubtitle": "Please briefly indicate what you are looking for:",
-      "needsPlaceholder": "Describe your needs in detail...",
+      "needsDetails": "Project details",
+      "needsSubtitle": "Please briefly describe what you're looking for",
+      "needsPlaceholder": "Describe your project, your specific needs...",
       "budgetTitle": "Estimated budget (optional)",
-      "interventionDate": "Desired date for intervention"
+      "interventionDate": "Desired intervention date"
     },
+    
     "step3": {
-      "title": "Your Contact Information",
+      "title": "Your contact information",
       "name": "Name",
       "phone": "Phone / WhatsApp",
       "email": "Email",
-      "contactMessage": "Please contact me for an estimate or to arrange a technical visit. Best regards,",
-      "acceptTerms": "I have read and accept the",
-      "termsLink": "Terms of Service"
+      "contactMessage": "Thank you for contacting me for an estimate or to arrange a technical visit. Best regards,"
     },
-    "services": {
-      "installation": "Complete Installation",
-      "maintenance": "Maintenance and Repair",
-      "consultation": "Consultation and Advisory",
-      "upgrade": "System Upgrade"
-    },
-    "residence": {
-      "house": "House",
-      "apartment": "Apartment",
-      "office": "Office",
-      "commercial": "Commercial Space"
-    },
+    
     "propertyTypes": {
       "villa": "Villa",
       "apartment": "Apartment",
       "office": "Office"
     },
+    
     "floors": {
-      "rdc": "Ground Floor",
-      "r1": "1st Floor",
-      "r2": "2nd Floor",
+      "rdc": "Ground floor",
+      "r1": "1st floor",
+      "r2": "2nd floor",
       "basement": "Basement"
     },
+    
     "currentState": {
       "construction": "Under construction",
       "occupied": "Already occupied",
       "renovation": "Renovation"
     },
+    
     "budget": {
       "less1m": "Less than 1,000,000 FCFA",
       "range1m3m": "1,000,000 – 3,000,000 FCFA",
@@ -661,23 +589,146 @@
       "more7m": "More than 7,000,000 FCFA",
       "custom": "I would like a personalized proposal"
     },
+    
     "buttons": {
       "previous": "Previous",
       "next": "Next",
-      "submit": "Submit Request"
+      "submit": "Submit request",
+      "sending": "Sending..."
     },
+    
     "trust": {
       "item1": {
-        "title": "100% Free Quote",
-        "text": "Receive a detailed estimate with no obligation on your part"
+        "title": "Quick response",
+        "text": "We respond within 24 hours with a detailed estimate"
       },
       "item2": {
-        "title": "Quick Response",
-        "text": "An expert will contact you within 24 hours to schedule a technical visit"
+        "title": "Free quote",
+        "text": "No commitment, receive your quote at no cost"
       },
       "item3": {
-        "title": "Secure Data",
-        "text": "Your information is protected and will never be shared"
+        "title": "Secure data",
+        "text": "Your information is protected and confidential"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Your trusted partner for a connected and secure home"
+    },
+    "stats": {
+      "projects": {
+        "number": "XX+",
+        "label": "Completed projects"
+      },
+      "clients": {
+        "number": "XX+",
+        "label": "Satisfied clients"
+      },
+      "experience": {
+        "number": "XX+",
+        "label": "Years of experience"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "Client satisfaction"
+      }
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "Founded in 20XX, our company was born from a passion to make technology accessible to everyone. We believe every home deserves to be smart, secure, and energy-efficient.",
+      "paragraph2": "Over the years, we have developed unique expertise in integrating electronic security solutions, home automation, and solar energy. Our team of qualified experts works every day to transform your living spaces into connected and sustainable environments.",
+      "paragraph3": "Today, we are proud to be the leader in Senegal in the smart home field, with over 500 completed projects and 98% client satisfaction."
+    },
+    "values": {
+      "title": "Our Values",
+      "excellence": {
+        "title": "Excellence",
+        "desc": "We aim for excellence in every project, using the best technologies and practices in the market."
+      },
+      "security": {
+        "title": "Security",
+        "desc": "Our clients' security is our top priority. We guarantee reliable and durable installations."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "desc": "We stay at the forefront of technology to offer the most modern and efficient solutions."
+      },
+      "trust": {
+        "title": "Trust",
+        "desc": "We build lasting relationships based on transparency, honesty, and professionalism."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "member1": {
+        "role": "CEO"
+      },
+      "member2": {
+        "role": "Technical Manager"
+      },
+      "member3": {
+        "role": "Project Manager"
+      },
+      "member4": {
+        "role": "Customer Service"
+      }
+    },
+    "cta": {
+      "title": "Ready to transform your home?",
+      "subtitle": "Contact us today for a free consultation and discover how we can improve your daily life.",
+      "buttonDevis": "Request a quote",
+      "buttonContact": "Contact us"
+    }
+  },
+  "blog": {
+    "hero": {
+      "title": "Blog",
+      "subtitle": "News, tips and trends in smart homes"
+    },
+    "categories": {
+      "all": "All",
+      "security": "Security",
+      "domotique": "Home Automation",
+      "solar": "Solar",
+      "tips": "Tips"
+    },
+    "readMore": "Read more",
+    "noResults": {
+      "title": "No articles found",
+      "subtitle": "Try changing category"
+    },
+    "newsletter": {
+      "title": "Stay Informed",
+      "subtitle": "Subscribe to our newsletter to receive our latest articles and tips",
+      "placeholder": "Your email address",
+      "button": "Subscribe"
+    },
+    "posts": {
+      "post1": {
+        "title": "5 Reasons to Install a Video Surveillance System",
+        "excerpt": "Discover why video surveillance has become essential to protect your home and loved ones in Senegal."
+      },
+      "post2": {
+        "title": "How Home Automation Improves Your Daily Comfort",
+        "excerpt": "Explore the benefits of a smart home and how it can transform your everyday life."
+      },
+      "post3": {
+        "title": "Solar Energy: A Profitable Investment",
+        "excerpt": "Discover how solar energy can reduce your electricity bills by 70% while protecting the environment."
+      },
+      "post4": {
+        "title": "10 Tips to Secure Your Home",
+        "excerpt": "Practical and accessible tips to strengthen your home's security today."
+      },
+      "post5": {
+        "title": "2024 Trends in Home Automation",
+        "excerpt": "Discover the innovations that will revolutionize the smart home this year."
+      },
+      "post6": {
+        "title": "Complete Guide: Choosing Your Alarm System",
+        "excerpt": "All our advice for selecting the alarm system suited to your needs and budget."
       }
     }
   }

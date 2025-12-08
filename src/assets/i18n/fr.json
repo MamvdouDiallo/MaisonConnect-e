@@ -1,19 +1,21 @@
 {
   "brand": "Marque",
-  "nav": {
-  "accueil": "Accueil",
-  "securite": "Sécurité électronique",
-  "domotique": "Domotique",
-  "energie": "Énergie solaire",
-  "packs": "Nos packs",
-  "services": "Services",
-  "accessoires": "Accessoires",
-  "shop": "Shop",
-  "devis": "Demande de devis",
-  "support": "Support",
-  "contact": "Nous contacter",
-  "recherche": "Recherche"
-},
+"nav": {
+    "accueil": "Accueil",
+    "a-propos": "À propos",
+    "realisations": "Réalisations",
+    "blog": "Blog",
+    "boutique": "Boutique",
+    "securite": "Sécurité électronique",
+    "domotique": "Domotique",
+    "solaire": "Énergie solaire",
+    "packs": "Nos packs",
+    "accessoires": "Accessoires",
+    "devis": "Devis",
+    "panier": "Panier",
+    "langue": "Langue",
+    "contact": "Contact"
+  },
   "cta": {
     "learnMore": "En savoir plus",
     "buy": "Acheter"
@@ -159,31 +161,33 @@
   },
 
 
-   "footer": {
-    "promo": "Profitez de nos offres exceptionnelles !",
-    "privacy": "Politique de confidentialité",
-    "terms": "Conditions générales",
-    "sitemap": "Plan du site",
-    "columns": {
-      "produits": "Produits",
-      "services": "Services",
+"footer": {
+  "promo": "Profitez de nos offres exceptionnelles !",
+  "rights": "Tous droits réservés",
+  "privacy": "Politique de confidentialité",
+  "terms": "Conditions générales",
+  "sitemap": "Plan du site",
+  "columns": {
+    "entreprise": "Entreprise",
+    "solutions": "Solutions",
+    "services": "Services",
+    "contact": "Contact",
+    "links": {
+      "accueil": "Accueil",
+      "a-propos": "À propos",
+      "realisations": "Réalisations",
+      "blog": "Blog",
+      "securite": "Sécurité",
+      "domotique": "Domotique",
+      "solaire": "Solaire",
+      "finitions": "Finitions",
+      "devis": "Devis",
       "boutique": "Boutique",
-      "contact": "Contact",
-      "links": {
-        "securite": "Sécurité",
-        "domotique": "Domotique",
-        "energie": "Énergie",
-        "packs": "Packs",
-        "accessoires": "Accessoires",
-        "services": "Services",
-        "support": "Support",
-        "devis": "Devis",
-        "shop": "Shop",
-        "contact": "Contact",
-        "recherche": "Recherche"
-      }
+      "assistance": "Assistance",
+      "contact": "Contact"
     }
-  },
+  }
+},
 
 
 
@@ -538,28 +542,22 @@
 
 
    "devis": {
-    "title": "Demandez votre devis gratuit",
-    "subtitle": "Faites appel à un professionnel pour un devis gratuit !",
+    "title": "Demande de devis gratuit",
+    "subtitle": "Obtenez une estimation personnalisée pour votre projet",
+    
     "step1": {
-      "title": "Informations sur votre projet",
-      "serviceType": "Type de prestation",
-      "selectService": "Sélectionnez un type de prestation",
-      "residenceType": "Type de résidence",
-      "selectResidence": "Sélectionnez un type de résidence",
-      "estimatedDate": "Date estimée de réalisation"
+      "title": "Quel type de projet souhaitez-vous réaliser ?",
+      "security": "Sécurité électronique (alarme, vidéosurveillance, contrôle d'accès)",
+      "smartHome": "Domotique (maison intelligente, automatisation)",
+      "solar": "Installation solaire (panneaux photovoltaïques, onduleurs)",
+      "finishes": "Finitions haut de gamme (éclairage, prises design)",
+      "complete": "Projet complet clé en main"
     },
+    
     "step2": {
-      "title": "Je souhaite obtenir un devis pour un projet concernant :",
-      "subtitle": "Cochez / précisez",
-      "projectTypes": "Types de projet",
-      "security": "Sécurité électronique (caméras, alarme, contrôle d'accès...)",
-      "smartHome": "Domotique / maison intelligente",
-      "solar": "Installation solaire (off-grid, hybride ou back-up)",
-      "finishes": "Finitions intérieures haut de gamme",
-      "complete": "Projet complet (sécurité + domotique + solaire + finitions)",
-      "siteInfo": "Informations sur le site d'installation",
+      "title": "Informations sur le site d'installation",
       "propertyType": "Type de bien",
-      "selectProperty": "Sélectionnez un type de bien",
+      "selectProperty": "Sélectionnez le type de bien",
       "address": "Adresse ou zone",
       "surface": "Superficie",
       "floors": "Étages",
@@ -567,48 +565,39 @@
       "currentState": "État actuel",
       "selectState": "Sélectionnez l'état actuel",
       "needsDetails": "Détails du besoin",
-      "needsSubtitle": "Merci d'indiquer brièvement ce que vous recherchez :",
-      "needsPlaceholder": "Décrivez vos besoins en détail...",
+      "needsSubtitle": "Merci d'indiquer brièvement ce que vous recherchez",
+      "needsPlaceholder": "Décrivez votre projet, vos besoins spécifiques...",
       "budgetTitle": "Budget estimatif (optionnel)",
       "interventionDate": "Date souhaitée pour l'intervention"
     },
+    
     "step3": {
       "title": "Vos coordonnées",
       "name": "Nom",
       "phone": "Téléphone / WhatsApp",
       "email": "Email",
-      "contactMessage": "Merci de me contacter pour une estimation ou pour organiser une visite technique. Cordialement,",
-      "acceptTerms": "J'ai lu et j'accepte les",
-      "termsLink": "CGS (Conditions Générales de Service)"
+      "contactMessage": "Merci de me contacter pour une estimation ou pour organiser une visite technique. Cordialement,"
     },
-    "services": {
-      "installation": "Installation complète",
-      "maintenance": "Maintenance et réparation",
-      "consultation": "Consultation et conseil",
-      "upgrade": "Mise à niveau système"
-    },
-    "residence": {
-      "house": "Maison",
-      "apartment": "Appartement",
-      "office": "Bureau",
-      "commercial": "Local commercial"
-    },
+    
     "propertyTypes": {
       "villa": "Villa",
       "apartment": "Appartement",
       "office": "Bureau"
     },
+    
     "floors": {
-      "rdc": "RDC (Rez-de-chaussée)",
-      "r1": "R+1 (1er étage)",
-      "r2": "R+2 (2ème étage)",
+      "rdc": "RDC",
+      "r1": "R+1",
+      "r2": "R+2",
       "basement": "Sous-sol"
     },
+    
     "currentState": {
       "construction": "En construction",
       "occupied": "Déjà habité",
       "renovation": "Rénovation"
     },
+    
     "budget": {
       "less1m": "Moins de 1 000 000 FCFA",
       "range1m3m": "1 000 000 – 3 000 000 FCFA",
@@ -616,23 +605,147 @@
       "more7m": "Plus de 7 000 000 FCFA",
       "custom": "Je souhaite une proposition personnalisée"
     },
+    
     "buttons": {
       "previous": "Précédent",
       "next": "Suivant",
-      "submit": "Envoyer ma demande"
+      "submit": "Envoyer la demande",
+      "sending": "Envoi en cours..."
     },
+    
     "trust": {
       "item1": {
-        "title": "Devis 100% gratuit",
-        "text": "Recevez une estimation détaillée sans engagement de votre part"
+        "title": "Réponse rapide",
+        "text": "Nous vous répondons sous 24h avec une estimation détaillée"
       },
       "item2": {
-        "title": "Réponse rapide",
-        "text": "Un expert vous contacte sous 24h pour planifier une visite technique"
+        "title": "Devis gratuit",
+        "text": "Aucun engagement, recevez votre devis sans frais"
       },
       "item3": {
         "title": "Données sécurisées",
-        "text": "Vos informations sont protégées et ne seront jamais partagées"
+        "text": "Vos informations sont protégées et confidentielles"
+      }
+    }
+  },
+
+  "about": {
+    "hero": {
+      "title": "À propos de nous",
+      "subtitle": "Votre partenaire de confiance pour une maison connectée et sécurisée"
+    },
+    "stats": {
+      "projects": {
+        "number": "XX+",
+        "label": "Projets réalisés"
+      },
+      "clients": {
+        "number": "XX+",
+        "label": "Clients satisfaits"
+      },
+      "experience": {
+        "number": "XX+",
+        "label": "Ans d'expérience"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "Satisfaction client"
+      }
+    },
+    "story": {
+      "title": "Notre histoire",
+      "paragraph1": "Fondée en 20XX, notre entreprise est née de la passion de rendre la technologie accessible à tous. Nous croyons que chaque foyer mérite d'être intelligent, sécurisé et économe en énergie.",
+      "paragraph2": "Au fil des années, nous avons développé une expertise unique dans l'intégration de solutions de sécurité électronique, de domotique et d'énergie solaire. Notre équipe d'experts qualifiés travaille chaque jour pour transformer vos espaces de vie en environnements connectés et durables.",
+      "paragraph3": "Aujourd'hui, nous sommes fiers d'être le leader au Sénégal dans le domaine de la maison connectée, avec plus de 500 projets réalisés et une satisfaction client de 98%."
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "excellence": {
+        "title": "Excellence",
+        "desc": "Nous visons l'excellence dans chaque projet, en utilisant les meilleures technologies et pratiques du marché."
+      },
+      "security": {
+        "title": "Sécurité",
+        "desc": "La sécurité de nos clients est notre priorité absolue. Nous garantissons des installations fiables et durables."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "desc": "Nous restons à la pointe de la technologie pour offrir les solutions les plus modernes et efficaces."
+      },
+      "trust": {
+        "title": "Confiance",
+        "desc": "Nous construisons des relations durables basées sur la transparence, l'honnêteté et le professionnalisme."
+      }
+    },
+    "team": {
+      "title": "Notre équipe",
+      "member1": {
+        "role": "Directeur Général"
+      },
+      "member2": {
+        "role": "Responsable Technique"
+      },
+      "member3": {
+        "role": "Chef de Projet"
+      },
+      "member4": {
+        "role": "Service Client"
+      }
+    },
+    "cta": {
+      "title": "Prêt à transformer votre maison ?",
+      "subtitle": "Contactez-nous dès aujourd'hui pour une consultation gratuite et découvrez comment nous pouvons améliorer votre quotidien.",
+      "buttonDevis": "Demander un devis",
+      "buttonContact": "Nous contacter"
+    }
+  },
+  "blog": {
+    "hero": {
+      "title": "Blog",
+      "subtitle": "Actualités, conseils et tendances de la maison connectée"
+    },
+    "categories": {
+      "all": "Tous",
+      "security": "Sécurité",
+      "domotique": "Domotique",
+      "solar": "Solaire",
+      "tips": "Conseils"
+    },
+    "readMore": "Lire plus",
+    "noResults": {
+      "title": "Aucun article trouvé",
+      "subtitle": "Essayez de changer de catégorie"
+    },
+    "newsletter": {
+      "title": "Restez informé",
+      "subtitle": "Inscrivez-vous à notre newsletter pour recevoir nos derniers articles et conseils",
+      "placeholder": "Votre adresse email",
+      "button": "S'inscrire"
+    },
+    "posts": {
+      "post1": {
+        "title": "5 raisons d'installer un système de vidéosurveillance",
+        "excerpt": "Découvrez pourquoi la vidéosurveillance est devenue essentielle pour protéger votre domicile et vos proches au Sénégal."
+      },
+      "post2": {
+        "title": "Comment la domotique améliore votre confort quotidien",
+        "excerpt": "Explorez les avantages d'une maison intelligente et comment elle peut transformer votre vie de tous les jours."
+      },
+      "post3": {
+        "title": "Énergie solaire : un investissement rentable",
+        "excerpt": "Découvrez comment l'énergie solaire peut réduire vos factures d'électricité de 70% tout en protégeant l'environnement."
+      },
+      "post4": {
+        "title": "10 astuces pour sécuriser votre maison",
+        "excerpt": "Des conseils pratiques et accessibles pour renforcer la sécurité de votre domicile dès aujourd'hui."
+      },
+      "post5": {
+        "title": "Les tendances 2024 en domotique",
+        "excerpt": "Découvrez les innovations qui vont révolutionner la maison connectée cette année."
+      },
+      "post6": {
+        "title": "Guide complet : choisir son système d'alarme",
+        "excerpt": "Tous nos conseils pour sélectionner le système d'alarme adapté à vos besoins et votre budget."
       }
     }
   }

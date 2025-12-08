@@ -6,9 +6,6 @@ import { LangService } from '../services/lang.service';
 import { ThemeService } from '../services/theme.service';
 import { CartService } from '../services/cart.service';
 
-
-
-
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -20,96 +17,85 @@ export class HeaderComponent {
 
   // Mobile menu
   open = signal(false);
-  submenuOpen = signal<number | null>(null);
+  mobileSubmenuOpen = signal<string | null>(null);
 
   // Lang menu
   langMenuOpen = signal(false);
+
+  // Desktop hover menu
+  hoverMenu = signal<string | null>(null);
 
   // Inject services
   t = inject(TranslateService);
   lang = inject(LangService);
   theme = inject(ThemeService);
 
-  langs = ['fr', 'en'];
+  langs = ['fr', 'en', 'ar'];
 
   // Flags for Apple-like UI
   flags: Record<string, string> = {
     fr: '🇫🇷',
     en: '🇬🇧',
-    // ar: '🇦🇪'
+    ar: '🇸🇦'
   };
 
   // Current language as signal
   currentLang = signal(this.t.currentLang || 'fr');
 
   constructor(public cartService: CartService) {
-
     this.cartService.cart$.subscribe(cart => {
       this.cartLength = cart.reduce((sum, item) => sum + item.quantity, 0);
     });
+
     // Update currentLang when service changes
     effect(() => {
       this.currentLang.set(this.t.currentLang);
     });
 
-    // Close all menus when clicking outside
+    // Close lang menu when clicking outside
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
-
       if (!target.closest('.lang-switcher')) {
         this.langMenuOpen.set(false);
-      }
-
-      if (!target.closest('.dropdown-container')) {
-        this.activeMenu.set(null);
       }
     });
   }
 
-  // Menu definition
-  menu = [
-    {
-      label: 'Produits',
-      children: [
-        { key: 'securite', link: '/securite' },
-        { key: 'domotique', link: '/domotique' },
-        { key: 'energie', link: '/energie' },
-        { key: 'packs', link: '/packs' },
-        { key: 'accessoires', link: '/accessoires' },
-      ]
-    },
-    {
-      label: 'Services',
-      children: [
-        { key: 'services', link: '/services' },
-        { key: 'support', link: '/support' },
-        { key: 'devis', link: '/devis' },
-      ]
-    },
-    {
-      label: 'Boutique',
-      children: [
-        { key: 'shop', link: '/shop' },
-      ]
-    },
-    {
-      label: 'Contact',
-      children: [
-        { key: 'contact', link: '/contact' },
-        // { key: 'recherche', link: '/recherche' },
-      ]
-    }
+  // Menu items - liens directs
+  menuItems = [
+    { labelKey: 'nav.accueil', link: '/', hasSubmenu: false },
+    { labelKey: 'nav.a-propos', link: '/about', hasSubmenu: false },
+    { labelKey: 'nav.packs', link: '/packs', hasSubmenu: false },
+    { labelKey: 'nav.realisations', link: '/realisations', hasSubmenu: false },
+    { labelKey: 'nav.blog', link: '/blog', hasSubmenu: false },
+    { labelKey: 'nav.contact', link: '/contact', hasSubmenu: false }
   ];
 
-  // Desktop menu active dropdown
-  activeMenu = signal<number | null>(null);
+  // Boutique avec sous-menu
+  boutiqueMenu = {
+    labelKey: 'nav.boutique',
+    link: '/shop',
+    submenu: [
+      { labelKey: 'nav.securite', link: '/shop/securite', icon: '🔒' },
+      { labelKey: 'nav.domotique', link: '/shop/domotique', icon: '🏠' },
+      { labelKey: 'nav.solaire', link: '/shop/solaire', icon: '☀️' },
+      { labelKey: 'nav.packs', link: '/shop/packs', icon: '📦' },
+      { labelKey: 'nav.accessoires', link: '/shop/accessoires', icon: '🔌' }
+    ]
+  };
 
-  toggleMenu(i: number) {
-    this.activeMenu.set(this.activeMenu() === i ? null : i);
+  // Show/hide hover menu
+  showSubmenu(menu: string) {
+    this.hoverMenu.set(menu);
   }
 
-  closeMenu() {
-    this.activeMenu.set(null);
+  hideSubmenu() {
+    this.hoverMenu.set(null);
+  }
+
+  // Mobile submenu toggle
+  toggleMobileSubmenu(menu: string) {
+    this.mobileSubmenuOpen.set(this.mobileSubmenuOpen() === menu ? null : menu);
   }
 
   // Language management
@@ -126,5 +112,11 @@ export class HeaderComponent {
   // Theme
   toggleTheme() {
     this.theme.toggle();
+  }
+
+  // Close mobile menu
+  closeMobileMenu() {
+    this.open.set(false);
+    this.mobileSubmenuOpen.set(null);
   }
 }

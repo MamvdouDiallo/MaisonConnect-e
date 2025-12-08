@@ -14,32 +14,35 @@ export class FooterComponent {
 
   cols = [
     {
-      titleKey: 'footer.columns.produits',
+      titleKey: 'footer.columns.entreprise',
       links: [
-        'securite',
-        'domotique',
-        'energie',
-        'packs',
-        'accessoires'
+        { label: 'accueil', route: '/' },
+        { label: 'a-propos', route: '/about' },
+        { label: 'realisations', route: '/realisations' },
+        { label: 'blog', route: '/blog' }
+      ]
+    },
+    {
+      titleKey: 'footer.columns.solutions',
+      links: [
+        { label: 'securite', route: '/securite' },
+        { label: 'domotique', route: '/domotique' },
+        { label: 'solaire', route: '/solaire' },
+        { label: 'finitions', route: '/finitions' }
       ]
     },
     {
       titleKey: 'footer.columns.services',
       links: [
-        'services',
-        'support',
-        'devis'
+        { label: 'devis', route: '/devis' },
+        { label: 'boutique', route: '/shop' },
+        { label: 'assistance', route: '/support' }
       ]
-    },
-    {
-      titleKey: 'footer.columns.boutique',
-      links: ['shop']
     },
     {
       titleKey: 'footer.columns.contact',
       links: [
-        'contact',
-        'recherche'
+        { label: 'contact', route: '/contact' }
       ]
     }
   ];
@@ -47,4 +50,6 @@ export class FooterComponent {
   getLinkTranslation(key: string) {
     return this.translate.instant(`footer.columns.links.${key}`);
   }
+    currentYear = new Date().getFullYear();
+
 }

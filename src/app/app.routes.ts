@@ -82,6 +82,18 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/recherche/recherche.component').then(m => m.RechercheComponent),
       },
+            {
+        path: 'about',
+        loadComponent: () =>
+          import('./pages/about/about.component').then(m => m.AboutComponent),
+      },
+            {
+        path: 'blog',
+        loadComponent: () =>
+          import('./pages/blog/blog.component').then(m => m.BlogComponent),
+      },
+      
+
     ],
   },
   { path: '**', redirectTo: '' },

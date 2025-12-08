@@ -157,31 +157,33 @@
     }
   },
 
-  "footer": {
-    "promo": "استمتع بعروضنا الخاصة!",
-    "privacy": "سياسة الخصوصية",
-    "terms": "الشروط والأحكام",
-    "sitemap": "خريطة الموقع",
-    "columns": {
-      "produits": "المنتجات",
-      "services": "الخدمات",
+"footer": {
+  "promo": "استفد من عروضنا الاستثنائية!",
+  "rights": "جميع الحقوق محفوظة",
+  "privacy": "سياسة الخصوصية",
+  "terms": "الشروط والأحكام",
+  "sitemap": "خريطة الموقع",
+  "columns": {
+    "entreprise": "الشركة",
+    "solutions": "الحلول",
+    "services": "الخدمات",
+    "contact": "اتصل بنا",
+    "links": {
+      "accueil": "الرئيسية",
+      "a-propos": "من نحن",
+      "realisations": "إنجازاتنا",
+      "blog": "المدونة",
+      "securite": "الأمن",
+      "domotique": "المنزل الذكي",
+      "solaire": "الطاقة الشمسية",
+      "finitions": "التشطيبات",
+      "devis": "طلب عرض سعر",
       "boutique": "المتجر",
-      "contact": "اتصل بنا",
-      "links": {
-        "securite": "الأمن",
-        "domotique": "الأتمتة المنزلية",
-        "energie": "الطاقة",
-        "packs": "الباقات",
-        "accessoires": "الإكسسوارات",
-        "services": "الخدمات",
-        "support": "الدعم",
-        "devis": "طلب عرض",
-        "shop": "المتجر",
-        "contact": "اتصل بنا",
-        "recherche": "بحث"
-      }
+      "assistance": "الدعم الفني",
+      "contact": "اتصل بنا"
     }
-  },
+  }
+},
   "securite": {
       "title": "الأمن الإلكتروني",
       "subtitle": "حلول احترافية وأنيقة لحماية ما يهمك."

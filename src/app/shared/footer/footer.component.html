@@ -1,28 +1,36 @@
-<footer class="bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-t border-black/5 mt-16" >
+<footer class="bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-t border-black/5 mt-16">
   <div class="container-apple py-8 text-sm">
 
     <!-- Message promo -->
-    <p class="mb-4">{{ 'footer.promo' | translate }}</p>
+    <p class="mb-6 text-center md:text-left">{{ 'footer.promo' | translate }}</p>
 
     <!-- Colonnes -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
       <div *ngFor="let c of cols">
-        <h3 class="text-gray-900 dark:text-white font-semibold mb-2">{{ c.titleKey | translate }}</h3>
-        <ul class="space-y-1">
-          <li *ngFor="let l of c.links">
-            <a routerLink="/" class="hover:underline">{{ getLinkTranslation(l) }}</a>
+        <h3 class="text-gray-900 dark:text-white font-semibold mb-3">{{ c.titleKey | translate }}</h3>
+        <ul class="space-y-2">
+          <li *ngFor="let link of c.links">
+            <a [routerLink]="link.route" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+              {{ getLinkTranslation(link.label) }}
+            </a>
           </li>
         </ul>
       </div>
     </div>
 
     <!-- Bas du footer -->
-    <div class="mt-6 border-t border-black/10 pt-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-      <span>© MonEntreprise. Tous droits réservés.</span>
-      <div class="flex gap-4">
-        <a routerLink="/">{{ 'footer.privacy' | translate }}</a>
-        <a routerLink="/">{{ 'footer.terms' | translate }}</a>
-        <a routerLink="/">{{ 'footer.sitemap' | translate }}</a>
+    <div class="mt-8 border-t border-black/10 dark:border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <span class="text-xs">© {{ currentYear }} MonEntreprise. {{ 'footer.rights' | translate }}</span>
+      <div class="flex gap-6 text-xs">
+        <a routerLink="/privacy" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+          {{ 'footer.privacy' | translate }}
+        </a>
+        <a routerLink="/terms" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+          {{ 'footer.terms' | translate }}
+        </a>
+        <a routerLink="/sitemap" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+          {{ 'footer.sitemap' | translate }}
+        </a>
       </div>
     </div>
 
