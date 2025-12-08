@@ -14,7 +14,9 @@
     "devis": "Quote",
     "panier": "Cart",
     "langue": "Language",
-    "contact": "Contact"
+    "contact": "Contact",
+    "finition": "Finishes",
+    "assistance": "Assistance"
     
   },
   "cta": {

@@ -47,4 +47,9 @@ export class RootService {
     return this.http.get<T>(`${this.url}${url}/by-codePap`, { params });
   }
 
+  getBlogById(id: number) {
+  return this.all(`blogs/${id}`);
+}
+
+
 }

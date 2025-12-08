@@ -30,13 +30,12 @@ export class HeaderComponent {
   lang = inject(LangService);
   theme = inject(ThemeService);
 
-  langs = ['fr', 'en', 'ar'];
+  langs = ['fr', 'en'];
 
   // Flags for Apple-like UI
   flags: Record<string, string> = {
     fr: '🇫🇷',
-    en: '🇬🇧',
-    ar: '🇸🇦'
+    en: '🇬🇧'
   };
 
   // Current language as signal
@@ -68,9 +67,22 @@ export class HeaderComponent {
     { labelKey: 'nav.packs', link: '/packs', hasSubmenu: false },
     { labelKey: 'nav.realisations', link: '/realisations', hasSubmenu: false },
     { labelKey: 'nav.blog', link: '/blog', hasSubmenu: false },
-    { labelKey: 'nav.contact', link: '/contact', hasSubmenu: false }
+    { labelKey: 'nav.contact', link: '/contact', hasSubmenu: false },
+    { labelKey: 'nav.assistance', link: '/support', hasSubmenu: false }
   ];
 
+  // // Boutique avec sous-menu
+  // boutiqueMenu = {
+  //   labelKey: 'nav.boutique',
+  //   link: '/shop',
+  //   submenu: [
+  //     { labelKey: 'nav.securite', link: '/shop/securite', icon: '🔒' },
+  //     { labelKey: 'nav.domotique', link: '/shop/domotique', icon: '🏠' },
+  //     { labelKey: 'nav.solaire', link: '/shop/solaire', icon: '☀️' },
+  //     { labelKey: 'nav.packs', link: '/shop/packs', icon: '📦' },
+  //     { labelKey: 'nav.accessoires', link: '/shop/accessoires', icon: '🔌' }
+  //   ]
+  // };
   // Boutique avec sous-menu
   boutiqueMenu = {
     labelKey: 'nav.boutique',
@@ -80,7 +92,8 @@ export class HeaderComponent {
       { labelKey: 'nav.domotique', link: '/shop/domotique', icon: '🏠' },
       { labelKey: 'nav.solaire', link: '/shop/solaire', icon: '☀️' },
       { labelKey: 'nav.packs', link: '/shop/packs', icon: '📦' },
-      { labelKey: 'nav.accessoires', link: '/shop/accessoires', icon: '🔌' }
+      { labelKey: 'nav.accessoires', link: '/shop/accessoires', icon: '🔌' },
+      { labelKey: 'nav.finition', link: '/shop/finition', icon: '🎨' }
     ]
   };
 

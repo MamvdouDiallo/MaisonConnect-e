@@ -14,7 +14,9 @@
     "devis": "Devis",
     "panier": "Panier",
     "langue": "Langue",
-    "contact": "Contact"
+    "contact": "Contact",
+    "finition": "Finitions",
+    "assistance": "Assistance"
   },
   "cta": {
     "learnMore": "En savoir plus",

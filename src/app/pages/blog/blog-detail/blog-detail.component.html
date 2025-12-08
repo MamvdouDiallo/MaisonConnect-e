@@ -1,0 +1,52 @@
+<div class="min-h-screen bg-white dark:bg-gray-900">
+
+  <div class="container-apple px-6 py-16">
+
+    <!-- Loader -->
+    <div *ngIf="loading" class="text-center py-20 text-gray-500 dark:text-gray-300">
+      <span class="text-xl">Chargement...</span>
+    </div>
+
+    <!-- Not Found -->
+    <div *ngIf="!loading && !blog" class="text-center py-20">
+      <h2 class="text-2xl font-bold text-gray-800 dark:text-white">
+        Article introuvable
+      </h2>
+    </div>
+
+    <!-- Blog Content -->
+    <div *ngIf="blog" class="max-w-4xl mx-auto">
+
+      <!-- Image -->
+      <div class="rounded-2xl overflow-hidden shadow-lg mb-8">
+        <img [src]="blog.image" class="w-full object-cover" />
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        {{ blog.title }}
+      </h1>
+
+      <!-- Meta -->
+      <div class="flex items-center gap-3 text-gray-500 dark:text-gray-400 mb-6">
+        <span>{{ blog.author }}</span>
+        <span>•</span>
+        <span>{{ blog.created_at | date:'dd MMM yyyy' }}</span>
+        <span>•</span>
+        <span>{{ blog.read_time }} min</span>
+      </div>
+
+      <!-- Category -->
+      <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full mb-6 inline-block">
+        {{ blog.category.name }}
+      </span>
+
+      <!-- Content -->
+      <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
+           [innerHTML]="blog.content">
+      </div>
+
+    </div>
+  </div>
+
+</div>

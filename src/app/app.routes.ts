@@ -92,6 +92,14 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/blog/blog.component').then(m => m.BlogComponent),
       },
+
+      {
+  path: 'blog/:id',
+  loadComponent: () =>
+    import('./pages/blog/blog-detail/blog-detail.component')
+      .then(m => m.BlogDetailComponent)
+}
+
       
 
     ],

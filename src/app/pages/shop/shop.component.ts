@@ -1,9 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from '../cart/cart.component';
 import { CartService } from '../../shared/services/cart.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { Subject, takeUntil } from 'rxjs';
+import { RootService } from '../../shared/services/root.service';
+import { SnackBarService } from '../../shared/services/snackBar.service';
+import { CategoryService } from '../../shared/services/category.service';
 
 interface Product {
   id: number;
@@ -24,10 +28,72 @@ interface Product {
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.scss'],
 })
-export class ShopComponent {
+export class ShopComponent implements  OnInit , OnDestroy {
   filter: string = 'all';
   query: string = '';
   // cart: Product[] = [];
+
+
+
+
+  // Pour indiquer le chargement (spinner)
+    loadData: boolean = false;
+  // Pour gérer les subscriptions et éviter les memory leaks
+    private destroy$ = new Subject<void>();
+    private  baseService= inject(RootService)
+    private snackbar= inject(SnackBarService)
+    private categoryService= inject(CategoryService)
+  
+    ngOnDestroy(): void {
+      this.destroy$.next();
+      this.destroy$.complete();
+    }
+  
+      ngOnInit(): void {
+      }
+
+
+        getProduits() {
+          this.loadData = true;
+          console.log('Chargement des produits...');
+          return this.baseService
+            .all('products')
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(
+              (data: any) => {
+                this.loadData = false;
+                console.log('Accessoires chargés :', data);
+        
+                if (data && data.length > 0) {
+                  this.products = data;
+                } else {
+                  this.products = [];
+                }
+              },
+              (error) => {
+                this.loadData = false;
+                console.error('Erreur lors du chargement des accessoires :', error);
+              }
+            );
+        }
+
+
+ 
+        
+    loadCategories() {
+    this.loadData = true;
+    this.categoryService.getCategories().subscribe({
+    next: (data) => {
+      this.categories = data;
+      this.loadData = false;
+    },
+    error: () => {
+      this.loadData = false;
+    }
+  });
+}
+
+
   selectedProduct?: Product;
 
     constructor(public cartService: CartService) {}
@@ -139,6 +205,11 @@ export class ShopComponent {
   // { key: 'packs', label: 'shop.categories.packs' },
   // { key: 'accessory', label: 'shop.categories.accessory' },
 ];
+
+
+
+
+
 
 
 }

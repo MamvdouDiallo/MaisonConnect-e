@@ -1,8 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Subject, takeUntil } from 'rxjs';
+import { RootService } from '../../shared/services/root.service';
+import { SnackBarService } from '../../shared/services/snackBar.service';
+import { CategoryService } from '../../shared/services/category.service';
 
 interface BlogPost {
   id: number;
@@ -22,9 +26,29 @@ interface BlogPost {
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'
 })
-export class BlogComponent {
+export class BlogComponent implements  OnInit , OnDestroy {
   searchQuery = signal('');
   selectedCategory = signal('all');
+
+
+
+
+  // Pour indiquer le chargement (spinner)
+    loadData: boolean = false;
+  // Pour gérer les subscriptions et éviter les memory leaks
+    private destroy$ = new Subject<void>();
+    private  baseService= inject(RootService)
+    private categoryService= inject(CategoryService)
+    private snackbar= inject(SnackBarService)
+  
+    ngOnDestroy(): void {
+      this.destroy$.next();
+      this.destroy$.complete();
+    }
+  
+      ngOnInit(): void {
+      }
+
 
   categories = [
     { value: 'all', labelKey: 'blog.categories.all' },
@@ -107,4 +131,44 @@ export class BlogComponent {
   setCategory(category: string) {
     this.selectedCategory.set(category);
   }
+
+
+  getBlog() {
+    this.loadData = true;
+    console.log('Chargement des accessoires...');
+    return this.baseService
+      .all('blogs')
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(
+        (data: any) => {
+          this.loadData = false;
+          console.log('Accessoires chargés :', data);
+  
+          if (data && data.length > 0) {
+            this.posts = data;
+          } else {
+            this.posts = [];
+          }
+        },
+        (error) => {
+          this.loadData = false;
+          console.error('Erreur lors du chargement des accessoires :', error);
+        }
+      );
+  }
+
+
+    loadCategories() {
+    this.loadData = true;
+    this.categoryService.getCategories().subscribe({
+    next: (data) => {
+      this.categories = data;
+      this.loadData = false;
+    },
+    error: () => {
+      this.loadData = false;
+    }
+  });
+}
+
 }
