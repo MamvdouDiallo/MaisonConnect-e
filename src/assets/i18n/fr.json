@@ -18,6 +18,113 @@
     "finition": "Finitions",
     "assistance": "Assistance"
   },
+"HomePage": {
+  "Hero": {
+    "title": "Votre partenaire pour des espaces modernes, sûrs et luxueux",
+    "introduction": "Bienvenue chez Itsloneed, spécialiste de la sécurité électronique, de la domotique, des solutions solaires de haute performance, et des finitions de logements premium.",
+    "accompagnement": "Nous accompagnons les propriétaires de villas, appartements et bureaux dans la conception d'espaces sécurisés, intelligents et élégants.",
+    "mission": "Notre mission : offrir une expérience parfaite, où la technologie améliore la vie quotidienne et où chaque détail reflète la qualité et le prestige.",
+    "buttonDiscover": "Découvrir nos services",
+    "buttonQuote": "Demander un devis",
+    "installationCertified": "Installation Certifiée",
+    "premiumWarranty": "Garantie Premium",
+    "Support": "Support 24/7",
+
+    "security": "Sécurité",
+    "securityDescription": "Systèmes de surveillance avancés",
+
+    "automation": "Domotique",
+    "automationDescription": "Maison intelligente et connectée",
+
+    "solar": "Solaire",
+    "solarDescription": "Solutions énergétiques durables",
+
+    "finishing": "Finitions",
+    "finishingDescription": "Design haut de gamme"
+  }
+}
+,
+
+  "Security": {
+    "badge": "Sécurité Électronique",
+    "title": "Votre sécurité. Notre priorité.",
+    "description": "Nous proposons une gamme complète de solutions pour protéger votre propriété 24h/24",
+    "slogan": "Votre sécurité. Notre priorité.",
+    "services": {
+      "alarm": {
+        "title": "Systèmes d'alarme intelligents",
+        "description": "Protection avancée avec alertes en temps réel et intégration mobile complète"
+      },
+      "cctv": {
+        "title": "Vidéosurveillance HD & IA",
+        "description": "Caméras haute définition avec intelligence artificielle et vision nocturne"
+      },
+      "access": {
+        "title": "Contrôle d'accès moderne",
+        "description": "Gestion intelligente des accès par badge, biométrie ou smartphone"
+      },
+      "intercom": {
+        "title": "Interphonie connectée",
+        "description": "Communication vidéo HD avec ouverture à distance depuis votre mobile"
+      },
+      "detection": {
+        "title": "Détection incendie et gaz",
+        "description": "Systèmes de détection précoce pour une protection maximale"
+      }
+    },
+
+    "quality": {
+      "title": "Qualité et Service",
+      "description": "Chaque système est conçu pour être discret, efficace et simple à utiliser, avec une installation professionnelle et un service après-vente réactif."
+    },
+    "hooks": {
+      "hook1": "Protégez ce qui compte le plus grâce à des technologies fiables, intelligentes et toujours connectées.",
+      "hook2": "Votre tranquillité d'esprit commence ici.",
+      "hook3": "La sécurité n'est pas un luxe, c'est une nécessité. Nous en faisons une expérience premium.",
+      "hook4": "Systèmes de sécurité nouvelle génération : discrets, performants, incontournables."
+    },
+    "ctaButton": "Sécuriser mon espace"
+  },
+
+  "SmartHomeSection": {
+    "badge": "Domotique & Smart Home",
+    "title": "La maison intelligente",
+    "description": "Offrez à votre maison ou bureau la puissance d'une technologie intuitive",
+    "ctaDiscover": "Découvrir",
+    "ctaQuote": "Demander un devis",
+    "features": {
+      "lighting": {
+        "title": "Gestion de l'éclairage intelligent",
+        "description": "Contrôlez l'intensité, la couleur et l'ambiance de vos lumières depuis votre smartphone"
+      },
+      "climate": {
+        "title": "Climatisation et confort automatisés",
+        "description": "Température optimale en toute saison avec programmation intelligente"
+      },
+      "blinds": {
+        "title": "Volets roulants et rideaux motorisés",
+        "description": "Ouverture et fermeture automatiques selon vos préférences et l'ensoleillement"
+      },
+      "scenarios": {
+        "title": "Scénarios personnalisés",
+        "description": "Modes prédéfinis : Arrivée, Départ, Coucher, Cinéma adaptés à votre style de vie"
+      },
+      "monitoring": {
+        "title": "Monitoring et contrôle à distance",
+        "description": "Gérez votre maison depuis n'importe où via votre smartphone"
+      }
+    },
+    "advantages": {
+      "title": "Avantages",
+      "description": "La domotique crée un environnement plus confortable, plus économique et plus valorisé."
+    },
+    "hooks": {
+      "hook1": "Transformez votre espace en un environnement intelligent, confortable et éco-efficace.",
+      "hook2": "La maison qui vous obéit. Le confort qui vous suit.",
+      "hook3": "Contrôlez tout. Partout. À tout moment.",
+      "hook4": "La technologie qui sublime votre quotidien."
+    }
+  },
   "cta": {
     "learnMore": "En savoir plus",
     "buy": "Acheter"
@@ -75,6 +182,125 @@
         ],
         "button": "Découvrir les solutions de sécurité"
       }
+    }
+  },
+  "Solar": {
+    "badge": "Solutions Solaires",
+    "title": "Autonomie énergétique",
+    "description": "Nos systèmes solaires sont pensés pour permettre aux villas, appartements et bureaux de réduire leur consommation tout en augmentant leur indépendance énergétique.",
+    "installations": {
+      "kits": {
+        "title": "Kits solaires complets",
+        "description": "Solutions clé en main avec panneaux photovoltaïques haute performance et tous les équipements nécessaires"
+      },
+      "batteries": {
+        "title": "Batteries haute performance",
+        "description": "Stockage énergétique de nouvelle génération pour une autonomie maximale jour et nuit"
+      },
+      "inverters": {
+        "title": "Onduleurs dernière génération",
+        "description": "Conversion optimale de l'énergie solaire avec rendement supérieur à 98%"
+      },
+      "hybrid": {
+        "title": "Configurations hybrid & off-grid",
+        "description": "Systèmes hybrides connectés au réseau ou solutions 100% autonomes selon vos besoins"
+      },
+      "backup": {
+        "title": "Solutions de secours électriques",
+        "description": "Alimentation de secours premium pour une continuité électrique sans interruption"
+      }
+    },
+    "advantages": {
+      "title": "Avantages",
+      "description": "Profitez d'une énergie propre, silencieuse et durable."
+    },
+    "stats": {
+      "years": "Ans de durée de vie",
+      "savings": "Économies factures",
+      "clean": "Énergie propre",
+      "availability": "Disponibilité"
+    },
+    "hooks": {
+      "hook1": "Réduisez vos factures, pas votre confort.",
+      "hook2": "L'énergie solaire conçue pour durer, optimiser et valoriser votre propriété.",
+      "hook3": "Autonomie énergétique, performance durable."
+    },
+    "ctaButton": "Passer au solaire"
+  },"Luxury": {
+    "badge": "Finitions Premium",
+    "title": "Excellence & Raffinement",
+    "description": "Nous réalisons des finitions haut de gamme qui rehaussent la valeur et l'esthétique de vos espaces",
+    "services": {
+      "ceilings": {
+        "title": "Plafonds raffinés",
+        "description": "Faux plafonds design avec éclairage intégré et finitions impeccables pour une élégance architecturale"
+      },
+      "paint": {
+        "title": "Peintures premium",
+        "description": "Peintures haut de gamme avec finitions satinées, mates ou brillantes pour un rendu exceptionnel"
+      },
+      "tiles": {
+        "title": "Carrelage & marbre de qualité",
+        "description": "Sélection de matériaux nobles : carrelage grand format, marbre et pierres naturelles d'exception"
+      },
+      "carpentry": {
+        "title": "Menuiserie moderne",
+        "description": "Menuiserie sur mesure, portes design et aménagements intérieurs en bois noble"
+      },
+      "design": {
+        "title": "Design intérieur & optimisation",
+        "description": "Conception d'espaces harmonieux avec optimisation des volumes et choix des matériaux premium"
+      }
+    },
+    "quality": {
+      "title": "Engagement Qualité",
+      "description": "Chaque projet est livré avec une attention méticuleuse aux détails et une recherche constante de perfection."
+    },
+    "hooks": {
+      "hook1": "Le raffinement se voit dans les détails. Nous en faisons notre signature.",
+      "hook2": "Conception haut de gamme, exécution impeccable.",
+      "hook3": "Sublimez votre villa ou appartement avec des finitions dignes des plus grandes résidences."
+    },
+    "ctaButton": "Démarrer votre projet",
+    "ctaSubtext": "Consultation gratuite pour votre projet de finitions"
+  },
+  "WhyUs": {
+    "badge": "Pourquoi nous choisir ?",
+    "mainSlogan": "L'innovation qui sécurise, illumine et sublime vos espaces.",
+    "shortSlogan": "Sécurité. Énergie. Luxe. Sans compromis.",
+    "reasons": {
+      "expertise": {
+        "title": "Expertise certifiée & installation professionnelle",
+        "description": "Notre équipe de techniciens certifiés garantit une installation conforme aux normes les plus strictes"
+      },
+      "support": {
+        "title": "Accompagnement personnalisé",
+        "description": "Un conseiller dédié vous guide de A à Z pour un projet sur-mesure adapté à vos besoins"
+      },
+      "premium": {
+        "title": "Produits haut de gamme & garanties officielles",
+        "description": "Nous sélectionnons uniquement des marques premium avec garanties constructeur étendues"
+      },
+      "technical": {
+        "title": "Support technique rapide",
+        "description": "Une assistance réactive 24/7 pour répondre à toutes vos questions et interventions urgentes"
+      },
+      "solutions": {
+        "title": "Solutions adaptées aux espaces modernes",
+        "description": "Villas, appartements et bureaux : des solutions pensées pour chaque type d'espace"
+      }
+    },
+    "stats": {
+      "projects": "Projets réalisés",
+      "satisfaction": "Clients satisfaits",
+      "experience": "Ans d'expérience",
+      "support": "Support disponible"
+    },
+    "cta": {
+      "title": "Prêt à transformer votre espace ?",
+      "description": "Discutons de votre projet et découvrez comment nous pouvons concrétiser votre vision",
+      "button": "Demander un devis gratuit",
+      "contact": "Nous contacter"
     }
   },
 

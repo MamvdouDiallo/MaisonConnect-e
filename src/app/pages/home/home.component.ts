@@ -72,11 +72,16 @@ import { ProjetsCarouselDomotiqueComponent } from "../compnents/ projet-carousel
 import { ScenariosCarouselDomotiqueComponent } from "../compnents/Scenarios carousel domotique.component";
 import { SmarthomeCarouselComponent } from "../compnents/Smart home carousel.component";
 import { SmartHubProComponent } from "../compnents/smart-home-hero";
+import { SecuritySectionComponent } from "../compnents/security-section";
+import { SmartHomeSectionSectionComponent } from "../compnents/app-smart-home-section";
+import { SolarSectionComponent } from "../compnents/app-solar-section";
+import { LuxuryFinishesSectionComponent } from "../compnents/luxury-finishes-section";
+import { WhyChooseUsSectionComponent } from "../compnents/why-choose-us-section";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, SmartHomeSectionComponent, TranslateModule, RouterModule, RouterLink, HeroShoppingEventComponent, IphoneProComponent, IphoneAirComponent, ProductsGridComponent, TvCarouselComponent, ServicesCarouselComponent, HeroDomotiqueComponent, ProduitsDomotiqueComponent, ServicesDomotiqueComponent, ProduitsGridDomotiqueComponent, ProjetsCarouselDomotiqueComponent, ScenariosCarouselDomotiqueComponent, SmarthomeCarouselComponent, SmartHubProComponent, SmarthomeCarouselComponent],
+  imports: [CommonModule, SmartHomeSectionComponent, TranslateModule, RouterModule, RouterLink, HeroShoppingEventComponent, IphoneProComponent, IphoneAirComponent, ProductsGridComponent, TvCarouselComponent, ServicesCarouselComponent, HeroDomotiqueComponent, ProduitsDomotiqueComponent, ServicesDomotiqueComponent, ProduitsGridDomotiqueComponent, ProjetsCarouselDomotiqueComponent, ScenariosCarouselDomotiqueComponent, SmarthomeCarouselComponent, SmartHubProComponent, SmarthomeCarouselComponent, SecuritySectionComponent, SmartHomeSectionSectionComponent, SolarSectionComponent, LuxuryFinishesSectionComponent, WhyChooseUsSectionComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
